@@ -96,7 +96,7 @@
 
     <main>
       <h1 class="butler f2 lh-title tc fw5 pv5 mt0">Talks & workshops</h1>
-      <ul class="list pl0 mt4 mb0" x-data="allSpeakingsData">
+      <ul class="list pl0 mt4 mb6">
         <template x-for="(speaking, index) in speakings" :key="speaking.title">
           <li>
             <div
@@ -126,9 +126,9 @@
                             class="lh-copy"
                             x-text="appearance.event"
                           ></span>
-                          <span class="dib ph2">
-                            <img class="w1" src="/assets/link-arrow.svg" />
-                          </span>
+                          <template x-if="appearance.link">
+                            &nbsp;<span class="coralred f6 mh1">&rarr;</span>
+                          </template>
                         </a>
                       </div>
                     </template>
