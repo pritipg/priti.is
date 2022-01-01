@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priti Pandurangan</title>
+    <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="/assets/script.js"></script>
+  </head>
+  <body
+    class="mw-page ml-auto mr-auto mb4 ph5-ns ph4 jost black-70 bg-chalkwhite"
+    x-data="app"
+    :class="{ 'overflow-hidden': menuIsOpen }"
+  >
+    <header class="full-bleed bb bw2 b--coralred">
+      <nav
+        class="
+          flex
+          items-center
+          justify-end justify-center-ns
+          mv3
+          mw8
+          ml-auto
+          mr-auto
+        "
+      >
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in leftNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              >
+              </a>
+            </li>
+          </template>
+        </ul>
+        <div class="w-10 w-20-l flex items-center justify-center mr-nav mr0-ns">
+          <a href="/" title="Home">
+            <img style="width: 60px" src="/assets/header.svg" />
+          </a>
+        </div>
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in rightNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              ></a>
+            </li>
+          </template>
+        </ul>
+      </nav>
+
+      <div class="dn-ns">
+        <input
+          type="checkbox"
+          id="openmenu"
+          class="hamburger-checkbox z-5"
+          x-model="menuIsOpen"
+        />
+        <div class="hamburger-icon z-5">
+          <label for="openmenu" id="hamburger-label">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        <div class="menu-pane absolute top-0 left-0 bg-white z-4">
+          <nav class="w-100 pv6 ph4">
+            <ul role="list">
+              <template
+                x-for="(navItem, index) in navItems"
+                :key="navItem.link"
+              >
+                <li>
+                  <a
+                    x-bind:href="navItem.link"
+                    class="dib f4 fw3 ttu tracked link hover dim coralred"
+                    x-bind:class="{ 'mt4': index !== 0 }"
+                    x-text="navItem.title"
+                  >
+                  </a>
+                </li>
+              </template>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <h1 class="butler f3 f2-l lh-title tc fw5 pt5 mv0">
+        A thousand words worth a picture
+      </h1>
+      <h2 class="f4 f3-l lh-title tc fw2 pb5 mt1 mb0 i">
+        "One day I will find the right words, and they will be simple." &mdash;
+        Jack Kerouac
+      </h2>
+
+      <section class="mw8 ml-auto mr-auto">
+        <ul class="list pl0">
+          <li class="pt3">
+            <p class="f5 f4-l lh-copy measure mv0 black-50 fw3">June 2021</p>
+            <a href="/ruminating" class="link black-70">
+              <h3 class="butler f3 f2-l lh-title measure fw5 mt2 mb1 dim hover">
+                Looking Back, Looking Ahead
+              </h3>
+            </a>
+          </li>
+          <li class="mt4 pt3">
+            <p class="f5 f4-l lh-copy measure mv0 black-50 fw3">
+              Feburary 2020
+            </p>
+            <a href="/writingaboutgenerativeart" class="link black-70">
+              <h3 class="butler f3 f2-l lh-title measure fw5 mt2 mb1 dim hover">
+                On Generative Art and Pen Plotters
+              </h3>
+            </a>
+          </li>
+          <li class="mt4 pt3">
+            <p class="f5 f4-l lh-copy measure mv0 black-50 fw3">
+              May 2020 / Gramener
+            </p>
+            <a
+              href="https://blog.gramener.com/engaging-readers-with-explorable-narratives"
+              class="link black-70"
+              target="_blank"
+            >
+              <h3 class="butler f3 f2-l lh-title measure fw5 mt2 mb1 dim hover">
+                Engaging Readers with Explorable Narratives&nbsp;<span
+                  class="coralred f5 f4-ns"
+                  >↗</span
+                >
+              </h3>
+            </a>
+          </li>
+          <li class="mt4 pt3">
+            <p class="f5 f4-l lh-copy measure mv0 black-50 fw3">
+              November 2019 / Nightingale, Journal of the Data Visualisation
+              Society
+            </p>
+            <a
+              href="https://medium.com/nightingale/lets-put-a-pin-on-it-288e5b6702f9"
+              class="link black-70"
+              target="_blank"
+            >
+              <h3 class="butler f3 f2-l measure fw5 mt2 dim hover">
+                Let&rsquo;s Put a Pin On It&nbsp;<span class="coralred f5 f4-ns"
+                  >↗</span
+                >
+              </h3>
+            </a>
+          </li>
+          <li class="mt4 pt3">
+            <p class="f5 f4-l lh-copy measure mv0 black-50 fw3">
+              September 2019
+            </p>
+            <a href="/takingadataselfie" class="link black-70">
+              <h3 class="butler f3 f2-l lh-title measure fw5 mt2 mb1 dim hover">
+                Come, Let&rsquo;s Take a (Data) Selfie
+              </h3>
+            </a>
+          </li>
+          <li class="mt4 pt3">
+            <p class="f5 f4-l lh-copy measure mv0 black-50 fw3">
+              September 2019 / Nightingale, Journal of the Data Visualisation
+              Society
+            </p>
+            <a
+              href="https://medium.com/nightingale/capturing-people-through-data-5b8d2cff44f4"
+              class="link black-70"
+              target="_blank"
+            >
+              <h3 class="butler f3 f2-l lh-title measure fw5 mt2 mb1 dim hover">
+                Capturing People Through Data&nbsp;<span
+                  class="coralred f5 f4-ns"
+                  >↗</span
+                >
+              </h3>
+            </a>
+          </li>
+          <li class="mt4 pt3">
+            <p class="f5 f4-l lh-copy measure mv0 black-50 fw3">
+              December 2018
+            </p>
+            <a href="/multifaceted" class="link black-70">
+              <h3 class="butler f3 f2-l lh-title measure fw5 mt2 mb1 dim hover">
+                Straddling the Lines Between Design, Technology & Art
+              </h3>
+            </a>
+          </li>
+          <li class="mt4 pt3">
+            <p class="f5 f4-l lh-copy measure mv0 black-50 fw3">
+              Sometime in October or November 2018
+            </p>
+            <a href="/thinkingaboutprocess" class="link black-70">
+              <h3 class="butler f3 f2-l lh-title measure fw5 mt2 mb1 dim hover">
+                Reflections on &ldquo;Transmedia Typography&rdquo;
+              </h3>
+            </a>
+          </li>
+          <li class="mt4 pt3">
+            <p class="f5 f4-l lh-copy measure mv0 black-50 fw3">
+              September 2018
+            </p>
+            <a href="/unboxingjoy" class="link black-70">
+              <h3 class="butler f3 f2-l lh-title measure fw5 mt2 mb1 dim hover">
+                On Packaging Design
+              </h3>
+            </a>
+          </li>
+          <li class="mt4 pt3">
+            <p class="f5 f4-l lh-copy measure mv0 black-50 fw3">March 2018</p>
+            <a href="/exploringvisualculture" class="link black-70">
+              <h3 class="butler f3 f2-l lh-title measure fw5 mt2 mb1 dim hover">
+                Dérive : Exploring Visual Culture
+              </h3>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer
+      class="
+        mw-page
+        ml-auto
+        mr-auto
+        flex flex-column flex-row-l
+        items-center
+        justify-center justify-between-l
+        mt5
+      "
+    >
+      <small class="w-100 w-third-l tc tl-l pv3 f4 lh-copy"
+        >© Priti Pandurangan 2022</small
+      >
+      <div class="w4 pv3 flex items-center justify-between">
+        <a
+          class="link dim hover dim"
+          href="https://www.linkedin.com/in/priti-pandurangan/"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/linkedin.svg" />
+        </a>
+
+        <a
+          class="link dim hover"
+          href="https://www.instagram.com/priti.pg"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/instagram.svg" />
+        </a>
+
+        <a class="link dim hover" href="mailto:where@priti.is" target="_blank">
+          <img class="w-icon" src="/assets/email.svg" />
+        </a>
+      </div>
+      <div class="w-100 w-third-l tc tr-l pv3 f4 lh-copy">
+        <a href="/thankful" class="link hover dim black-70"> Colophon </a>
+      </div>
+    </footer>
+  </body>
+</html>

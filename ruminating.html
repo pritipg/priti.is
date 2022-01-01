@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priti Pandurangan</title>
+    <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="/assets/script.js"></script>
+  </head>
+  <body
+    class="mw-page ml-auto mr-auto mb4 ph5-ns ph4 jost black-70 bg-chalkwhite"
+    x-data="app"
+    :class="{ 'overflow-hidden': menuIsOpen }"
+  >
+    <header class="full-bleed bb bw2 b--coralred">
+      <nav
+        class="
+          flex
+          items-center
+          justify-end justify-center-ns
+          mv3
+          mw8
+          ml-auto
+          mr-auto
+        "
+      >
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in leftNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              >
+              </a>
+            </li>
+          </template>
+        </ul>
+        <div class="w-10 w-20-l flex items-center justify-center mr-nav mr0-ns">
+          <a href="/" title="Home">
+            <img style="width: 60px" src="/assets/header.svg" />
+          </a>
+        </div>
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in rightNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              ></a>
+            </li>
+          </template>
+        </ul>
+      </nav>
+
+      <div class="dn-ns">
+        <input
+          type="checkbox"
+          id="openmenu"
+          class="hamburger-checkbox z-5"
+          x-model="menuIsOpen"
+        />
+        <div class="hamburger-icon z-5">
+          <label for="openmenu" id="hamburger-label">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        <div class="menu-pane absolute top-0 left-0 bg-white z-4">
+          <nav class="w-100 pv6 ph4">
+            <ul role="list">
+              <template
+                x-for="(navItem, index) in navItems"
+                :key="navItem.link"
+              >
+                <li>
+                  <a
+                    x-bind:href="navItem.link"
+                    class="dib f4 fw3 ttu tracked link hover dim coralred"
+                    x-bind:class="{ 'mt4': index !== 0 }"
+                    x-text="navItem.title"
+                  >
+                  </a>
+                </li>
+              </template>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="bg-coralred full-bleed ph4 ph5-l pt4 pb7 white">
+        <h1 class="butler f3 f2-l lh-title tc fw5 pt5 mv0">
+          Looking Back, Looking&nbsp;Ahead
+        </h1>
+        <h2 class="f4 f3-l lh-title tc fw3 pb5 mt1 mb0 i white-90">
+          A designer’s journey through data, design & storytelling
+        </h2>
+      </section>
+
+      <section
+        class="
+          mw-blog
+          ml-auto
+          mr-auto
+          bg-white
+          br3-ns
+          pa4
+          pa5-m
+          pa6-l
+          full-bleed-s
+        "
+        style="margin-top: -14rem"
+      >
+        <h3 class="f3 f2-ns lh-title fw5 mv0 black-80">
+          My journey from Srishti to Gramener
+        </h3>
+        <p class="f5 f4-ns lh-copy black-50">
+          About two years ago, as any freshly-minted design grad out of a
+          Master’s program, I interviewed with various design firms and
+          consultancies. Srishti has a fairly strong network of practitioners
+          and companies who regularly dip into the graduate pool looking for
+          candidates. Following through on one of these referrals connected me
+          to Richie from Gramener. Richie and I spoke at length — about
+          Gramener, about my work, about the work done by Storylabs, and the
+          exciting things they have been exploring in the space of data
+          storytelling. Though we both had our questions around how my specific
+          skillset would best fit into a small research team, we took the plunge
+          and I joined Storylabs in June of 2019.
+        </p>
+
+        <h3 class="f3 f2-ns lh-title fw5 mt4 mt5-ns mb0 black-80">
+          Skipping to two years ahead
+        </h3>
+        <p class="f5 f4-ns lh-copy black-50">
+          It’s been two years now; I’ve grown from a beady-eyed novice to a
+          bespectacled information designer with a body of work to call my own.
+          Storylabs has grown as well — in our search for ever more effective
+          ways to communicate insights with clarity and panache, we have
+          explored various flavors of data storytelling from comics and
+          interactive narratives to data art and other non-traditional
+          visualisation techniques. In these two years, I’ve had the opportunity
+          to research storytelling methodologies, formulate them as tools &
+          frameworks, and author data stories as examples.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          As I reflect back on my work, there are a few common strands that
+          thread through every piece.
+        </p>
+        <ul>
+          <li>
+            <p class="f5 f4-ns lh-copy black-50">
+              Storytelling with data is a nascent field and has many
+              under-explored avenues. Interactive formats in particular are
+              fertile grounds, especially for stories that require exploration
+              and drilling down for details (see Pandemic Pandæmonium, Who will
+              America Vote for? and Coral Reefs are Dying). Another angle has
+              been introducing comics to bring a human touch to data (Our
+              Fattening World and For the Love of Numbers). Finally, there’s the
+              odd-ball physical visualisations like in Let’s Put a Pin on It for
+              those times when you really want to dial up engagement to eleven.
+            </p>
+          </li>
+          <li>
+            <p class="f5 f4-ns lh-copy black-50">
+              Why should all data visualisations look the same or take a
+              thousand lines of code to make? There is a twin opportunity here —
+              expanding the horizon of what constitutes data visualisations and
+              who gets to make it. Under the banner of data art, we’ve designed
+              tools for reducing the barriers to creating non-traditional forms
+              of datavis. Joyful Data aims to be an intuitive tool for creating
+              beautiful data-driven graphics, while Data Imprint pushes the idea
+              of using data to create personalised art.
+            </p>
+          </li>
+          <li>
+            <p class="f5 f4-ns lh-copy black-50">
+              I’ve also actively continued to pursue my interests in creative
+              coding and generative art. Whether that’s making daily sketches,
+              noodling around with a pen plotter, or teaching generative design,
+              more often than not, these techniques have found a way to be
+              useful in my work. Connecting seemingly unrelated fields might be
+              the best way to discover new ideas. The tools & processes involved
+              in creative coding have proved to be more valuable for me beyond
+              only making art.
+            </p>
+          </li>
+        </ul>
+
+        <h3 class="f3 f2-ns lh-title fw5 mt4 mt5-ns mb0 black-80">
+          Learnings and unlearnings
+        </h3>
+        <p class="f5 f4-ns lh-copy black-50">
+          <strong class="b fw5"
+            >Good people are worth their weight in rhodium.</strong
+          >
+          More than anything else, Storylabs has given me the enormous fortune
+          to work with Richie & S Anand. Richie took a bet on me when he hired
+          me into the team. He has an unbeatable ability to find and bring out
+          the best in others — for that, I’ll always be grateful. Anand is
+          always bubbling with ideas and is a constant source of inspiration
+          (sometimes too much to keep up with 😃). The patience with which he
+          listens to others and his ability to simplify an idea down to its
+          essence is something worth emulating.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          <strong class="b fw5"
+            >Being able to write small snippets of code still continues to pay
+            as a designer.</strong
+          >
+          The hardest part has been to stay true to what James Hague aptly calls
+          programming without being overwhelmed by and obsessed with
+          programming. Sticking to simple tools and languages has helped take
+          out some of the anxiety associated with programming for me — p5.js,
+          Tachyons, and AlpineJS have become dear friends. I, as a designer,
+          write programs to communicate an idea, not to build empires with code.
+          And that’s enough.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          <strong class="b fw5"
+            >Design is more than making pretty pictures.</strong
+          >
+          There’s a certain view of designers in the industry as the people who
+          sling photoshop around beautifying the world. Though Srishti never put
+          us in a box, it’s easy to subconsciously absorb those notions or face
+          them when working with others. Truth be told, at the right place,
+          designers make great glue in an organisation — we are creators,
+          connectors, communicators. At Storylabs, my work varies from
+          researching new techniques one day to consulting, teaching, and
+          writing the next. Be open to adapt to the needs of a small team and
+          ready to learn as you go.
+        </p>
+
+        <h3 class="f3 f2-ns lh-title fw5 mt4 mt5-ns mb0 black-80">Up next</h3>
+        <p class="f5 f4-ns lh-copy black-50">
+          It’s been an uphill ride to find my way into the world of data,
+          design, and research. Some of it has been challenging, some fun, but
+          almost all of it has been worthwhile.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">So, where do we go from here?</p>
+        <p class="f5 f4-ns lh-copy black-50">Onward.</p>
+      </section>
+    </main>
+
+    <footer
+      class="
+        mw-page
+        ml-auto
+        mr-auto
+        flex flex-column flex-row-l
+        items-center
+        justify-center justify-between-l
+        mt5
+      "
+    >
+      <small class="w-100 w-third-l tc tl-l pv3 f4 lh-copy"
+        >© Priti Pandurangan 2022</small
+      >
+      <div class="w4 pv3 flex items-center justify-between">
+        <a
+          class="link dim hover dim"
+          href="https://www.linkedin.com/in/priti-pandurangan/"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/linkedin.svg" />
+        </a>
+
+        <a
+          class="link dim hover"
+          href="https://www.instagram.com/priti.pg"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/instagram.svg" />
+        </a>
+
+        <a class="link dim hover" href="mailto:where@priti.is" target="_blank">
+          <img class="w-icon" src="/assets/email.svg" />
+        </a>
+      </div>
+      <div class="w-100 w-third-l tc tr-l pv3 f4 lh-copy">
+        <a href="/thankful" class="link hover dim black-70"> Colophon </a>
+      </div>
+    </footer>
+  </body>
+</html>

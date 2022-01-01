@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priti Pandurangan</title>
+    <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="/assets/script.js"></script>
+  </head>
+  <body
+    class="mw-page ml-auto mr-auto mb4 ph5-ns ph4 jost black-70 bg-chalkwhite"
+    x-data="app"
+    :class="{ 'overflow-hidden': menuIsOpen }"
+  >
+    <header class="full-bleed bb bw2 b--coralred">
+      <nav
+        class="
+          flex
+          items-center
+          justify-end justify-center-ns
+          mv3
+          mw8
+          ml-auto
+          mr-auto
+        "
+      >
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in leftNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              >
+              </a>
+            </li>
+          </template>
+        </ul>
+        <div class="w-10 w-20-l flex items-center justify-center mr-nav mr0-ns">
+          <a href="/" title="Home">
+            <img style="width: 60px" src="/assets/header.svg" />
+          </a>
+        </div>
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in rightNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              ></a>
+            </li>
+          </template>
+        </ul>
+      </nav>
+
+      <div class="dn-ns">
+        <input
+          type="checkbox"
+          id="openmenu"
+          class="hamburger-checkbox z-5"
+          x-model="menuIsOpen"
+        />
+        <div class="hamburger-icon z-5">
+          <label for="openmenu" id="hamburger-label">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        <div class="menu-pane absolute top-0 left-0 bg-white z-4">
+          <nav class="w-100 pv6 ph4">
+            <ul role="list">
+              <template
+                x-for="(navItem, index) in navItems"
+                :key="navItem.link"
+              >
+                <li>
+                  <a
+                    x-bind:href="navItem.link"
+                    class="dib f4 fw3 ttu tracked link hover dim coralred"
+                    x-bind:class="{ 'mt4': index !== 0 }"
+                    x-text="navItem.title"
+                  >
+                  </a>
+                </li>
+              </template>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="bg-coralred full-bleed ph4 ph5-l pt4 pb7 white">
+        <h1 class="butler f3 f2-l lh-title tc fw5 pt5 mv0">
+          Reflection on &ldquo;Transmedia Typography&rdquo;
+        </h1>
+      </section>
+
+      <section
+        class="
+          mw-blog
+          ml-auto
+          mr-auto
+          bg-white
+          br3-ns
+          pa4
+          pa5-m
+          pa6-l
+          full-bleed-s
+        "
+        style="margin-top: -8rem"
+      >
+        <p class="f5 f4-ns lh-copy black-50 drop-cap">
+          Everyday for the past few weeks, I sat behind my laptop, switching
+          between InDesign, Illustrator and Chrome. I sipped some tea in the
+          morning, some more tea in the afternoon — and, oh yes — food,
+          sometimes. Yet, despite the monotony, everyday was different: the
+          process of identifying that one field of interest to propose,
+          ruthlessly going over it again and again until it was convincing
+          enough, research and more research, putting things together, working
+          on the sketches. The research process felt exhausting. Pouring over
+          papers and books and yet trying to stay on the right track without
+          getting carried away and influenced by the many amazing and inspiring
+          works by designers of old.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          Once the research took shape, I spent a lot of time ransacking books
+          and the Internet for beautiful and compelling artworks to back my
+          proposal.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          I downloaded a bunch of images, added them to the research document,
+          moved along only to come back and take a second look and reject them
+          all. Rise, rinse and repeat. The satisfaction of finding the right
+          words and images to express your ideas is an underrated pleasure.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          It’s interesting to think about when I get attached to my work and
+          when I don’t. I think I learned it the best during my summer
+          internship. I got attached when I worked. I detached myself when I had
+          to step back and review my work. It’s a difficult skill, but it
+          definitely helps.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          This project was research-focused, but it’s fair to say one only gets
+          more inquisitive about an area of study after a period of intensive
+          research. I wanted to spend more time exploring the possibilities of
+          making the kind of work I was researching about. This project was an
+          adrenaline ride for me. Too little time, tight constraints, yet far
+          too many ideas I wanted to capture.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          To be a designer you need skill, no doubt, but also a ton of
+          enthusiasm. Self-initiated projects are one of the best ways to
+          showcase both. A day spent on the coding experiments for expressive
+          typography in static, temporal and interactive media opened up a lot
+          of possibilities. I put together an online sandbox to share these with
+          my peers and let them interact and express.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          I had a lot of fun designing the cover of my book. Using one of my
+          sketches “drawing with type”, I took a pen tablet and started doodling
+          shapes to express what I felt transmedia typography would look like.
+          The neon colours of the text and muted background evoked the perfect
+          futuristic feel. The future is digital, expressive and a storm of type
+          we’ll walk in everyday.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          Printing your work is always the fun part. I personally love the
+          entire process of putting together my artwork for the book and getting
+          it print-ready. Some of my learnings in the internship helped me keep
+          necessary key points in mind while setting up my document.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          With my book freshly printed out, I touched the pages, smelled the
+          soft, smooth paper and held it close. There’s something magical about
+          seeing your work on paper. Nothing beats this phase of any print
+          project.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          During the times when designers quibble over whether design is about
+          function or aesthetics, I figure sometimes the function could itself
+          be to kindle an emotion. And this is where I see design merge into
+          art. Like the Rainbow Rowell quote,
+          <em class="i"
+            >“She never looked nice. She looked like art, and art wasn’t
+            supposed to look nice; it was supposed to make you feel
+            somethings”</em
+          >. This, to me, is the essence of expressive typography.
+        </p>
+      </section>
+    </main>
+
+    <footer
+      class="
+        mw-page
+        ml-auto
+        mr-auto
+        flex flex-column flex-row-l
+        items-center
+        justify-center justify-between-l
+        mt5
+      "
+    >
+      <small class="w-100 w-third-l tc tl-l pv3 f4 lh-copy"
+        >© Priti Pandurangan 2022</small
+      >
+      <div class="w4 pv3 flex items-center justify-between">
+        <a
+          class="link dim hover dim"
+          href="https://www.linkedin.com/in/priti-pandurangan/"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/linkedin.svg" />
+        </a>
+
+        <a
+          class="link dim hover"
+          href="https://www.instagram.com/priti.pg"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/instagram.svg" />
+        </a>
+
+        <a class="link dim hover" href="mailto:where@priti.is" target="_blank">
+          <img class="w-icon" src="/assets/email.svg" />
+        </a>
+      </div>
+      <div class="w-100 w-third-l tc tr-l pv3 f4 lh-copy">
+        <a href="/thankful" class="link hover dim black-70"> Colophon </a>
+      </div>
+    </footer>
+  </body>
+</html>

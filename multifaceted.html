@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priti Pandurangan</title>
+    <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="/assets/script.js"></script>
+  </head>
+  <body
+    class="mw-page ml-auto mr-auto mb4 ph5-ns ph4 jost black-70 bg-chalkwhite"
+    x-data="app"
+    :class="{ 'overflow-hidden': menuIsOpen }"
+  >
+    <header class="full-bleed bb bw2 b--coralred">
+      <nav
+        class="
+          flex
+          items-center
+          justify-end justify-center-ns
+          mv3
+          mw8
+          ml-auto
+          mr-auto
+        "
+      >
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in leftNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              >
+              </a>
+            </li>
+          </template>
+        </ul>
+        <div class="w-10 w-20-l flex items-center justify-center mr-nav mr0-ns">
+          <a href="/" title="Home">
+            <img style="width: 60px" src="/assets/header.svg" />
+          </a>
+        </div>
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in rightNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              ></a>
+            </li>
+          </template>
+        </ul>
+      </nav>
+
+      <div class="dn-ns">
+        <input
+          type="checkbox"
+          id="openmenu"
+          class="hamburger-checkbox z-5"
+          x-model="menuIsOpen"
+        />
+        <div class="hamburger-icon z-5">
+          <label for="openmenu" id="hamburger-label">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        <div class="menu-pane absolute top-0 left-0 bg-white z-4">
+          <nav class="w-100 pv6 ph4">
+            <ul role="list">
+              <template
+                x-for="(navItem, index) in navItems"
+                :key="navItem.link"
+              >
+                <li>
+                  <a
+                    x-bind:href="navItem.link"
+                    class="dib f4 fw3 ttu tracked link hover dim coralred"
+                    x-bind:class="{ 'mt4': index !== 0 }"
+                    x-text="navItem.title"
+                  >
+                  </a>
+                </li>
+              </template>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="bg-coralred full-bleed ph4 ph5-l pt4 pb7 white">
+        <h1 class="butler f3 f2-l lh-title tc fw5 pt5 mv0">
+          Straddling the Lines between Design, Technology & Art
+        </h1>
+      </section>
+
+      <section
+        class="
+          mw-blog
+          ml-auto
+          mr-auto
+          bg-white
+          br3-ns
+          pa4
+          pa5-m
+          pa6-l
+          full-bleed-s
+        "
+        style="margin-top: -8rem"
+      >
+        <h3 class="f3 f2-ns lh-title fw5 mt0 mb0 black-80">
+          Growing up with arts
+        </h3>
+        <div class="cf w-100">
+          <img
+            class="fr w-100 w-40-ns"
+            src="/assets/writings/reflection/01.png"
+          />
+          <p class="f5 f4-ns lh-copy black-50">
+            I was lucky to have an early start in the Arts, beginning my study
+            of Carnatic music and Bharatanatyam at the age of three. My
+            instructions began simply with the basics of motion, gesture and
+            emoting, but over the years I progressed to an advanced
+            practitioner.
+          </p>
+          <p class="f5 f4-ns lh-copy black-50">
+            I had my first formal performance at the age of 8, and since then
+            have continued to practice and perform throughout the years.
+          </p>
+          <p class="f5 f4-ns lh-copy black-50">
+            As a practising artist, I have developed a deep appreciation of the
+            language of dance, a nuanced understanding of how music both leads
+            and follows in a performance and a wide knowledge of Indian
+            mythology, culture and traditions. Having studied under a classical
+            lineage of <em class="i">guru-shishya parampara</em>, I was taught
+            to place an emphasis on the freedom on expression art offers, while
+            also inculcating a sense of ethical responsibility in exercising
+            that freedom.
+          </p>
+        </div>
+
+        <h3 class="f3 f2-ns lh-title fw5 mt4 mt5-ns mb0 black-80">
+          Engineering a future
+        </h3>
+        <div class="cf w-100">
+          <img
+            class="fl w-100 w-40-ns"
+            src="/assets/writings/reflection/02.png"
+          />
+          <div class="fl w-100 w-60-ns">
+            <p class="f5 f4-ns lh-copy black-50">
+              I studied Computer Science in college, partly out of an interest
+              in the subject and partly because I wanted to keep a strict
+              separation between my art life and my professional life. Over four
+              years of the bachelor’s degree, I learned to get comfortable with
+              picking up technical skills and exploring topics that have come to
+              control our everyday life: from artificial intelligence and
+              computer vision to advanced topics in programming.
+            </p>
+            <p class="f5 f4-ns lh-copy black-50">
+              This phase, while offering me pockets of topics I was interested
+              in, did not give me a clear sense of what my working life would be
+              like. I felt some aspects of creativity missing and I craved to
+              find an avenue to express myself.
+            </p>
+          </div>
+        </div>
+
+        <h3 class="f3 f2-ns lh-title fw5 mt4 mt5-ns mb0 black-80">
+          First taste of the real world
+        </h3>
+        <p class="f5 f4-ns lh-copy black-50">
+          Post my studies, I was placed as an engineer in Wipro and shifted from
+          Chennai to Bangalore. A number of things changed for me at this point:
+          I could pursue the beginnings of an independent life in a new city, I
+          made new friends and started to explore various professions. At Wipro,
+          I was quickly put in a position of responsibility, and learned that I
+          was good at coordinating and managing things in a small group of
+          people. I found this unexpected as I never see myself as someone
+          comfortable with meeting and managing people everyday.
+        </p>
+        <img class="w-100" src="/assets/writings/reflection/03.png" />
+        <p class="f5 f4-ns lh-copy black-50">
+          When the time came for us to be separated into projects, I was offered
+          to work in a long-term project in Hyderabad. At this point I needed to
+          make a decision, particularly because the project required a bond from
+          the employees. Seeing that my programming skills were not sufficient
+          at this point and a corporate environment would lack the kind of
+          learning and growth I saw for myself, I made the difficult choice of
+          quitting the company.
+        </p>
+
+        <h3 class="f3 f2-ns lh-title fw5 mt4 mt5-ns mb0 black-80">
+          Geeking it out
+        </h3>
+        <p class="f5 f4-ns lh-copy black-50">
+          I joined Geekskool, a three-month programming bootcamp, right after
+          leaving Wipro. I was looking for that missing disconnect between the
+          technical and the creative world. I felt my programming skills were
+          not up to par and spent a significant portion of my time learning to
+          get better at programming. A distinction soon became clear to me:
+          there were programmers who primarily worked on interfaces with a focus
+          on the visual design, interaction and behaviour, and programmers who
+          largely worked on managing and transforming data that powered the
+          interfaces behind the screen.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          Given my interest in finding something creative, I chose to focus on
+          interfaces and put my energy into learning to become a frontend
+          developer. Several of my projects at this point were focused on
+          creating visual results with code — from a small game, a paint app and
+          a polar clock, all interactive and visual applications built with
+          code. I enjoyed working on these projects and saw an inkling of what I
+          wanted to do as a professional here.
+        </p>
+
+        <h3 class="f3 f2-ns lh-title fw5 mt4 mt5-ns mb0 black-80">
+          Back into the fray
+        </h3>
+        <p class="f5 f4-ns lh-copy black-50">
+          After Geekskool, I joined a small startup working on an educational
+          product for schools and colleges. I worked on their dashboard and
+          interface, with a heavy focus on data visualization. I preferred
+          working in a smaller company as there were more opportunities for me
+          to learn and grow. At the same time, I started to learn more about
+          visual design as a profession. While my work involved a great deal of
+          working with design, the code-first approach always felt lacking to
+          me. I started to make a distinction between design and art: design
+          requires being able to rationalise your decisions and view them from
+          the perspective of the user, while art is more free-form and focuses
+          on expressing the artist’s vision. I found that I was lacking in this
+          fundamental skill and that there was little scope for me in developing
+          as a designer in a startup environment.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          Two observations lead me from working as a developer to seeking a
+          deeper understanding of the design field. First, I wanted to learn the
+          design skills that I had found lacking in my practice and second, I
+          felt design as career would offer me more opportunities to engage in
+          creative work. Driven by this curiosity and a resolve to fully explore
+          visual design, I stepped into the next phase of my career.
+        </p>
+        <img class="w-100 mv4" src="/assets/writings/reflection/04.jpg" />
+
+        <h3 class="f3 f2-ns lh-title fw5 mt4 mt5-ns mb0 black-80">
+          Seeking a path
+        </h3>
+        <img class="w-100 mv4" src="/assets/writings/reflection/05.png" />
+        <p class="f5 f4-ns lh-copy black-50">
+          After moving out from my job, I made a dedicated resolve to find the
+          best design studios in the city and learn from them as much as I could
+          about design. I made lists of different studios, spoke to several of
+          them and interviewed as an intern. After a few weeks of trying, I
+          joined Happy mcgarrybowen, a well-known design studio as an intern for
+          a period of six months. I opened photoshop for the first time, learned
+          about advertising and branding and packaging and saw the various roles
+          and practices within the company. One of the major influencing factors
+          for me was to find a good mentor who saw me as someone sincerely
+          curious about the field and working hard to find my place in it. This
+          experience gave me a sense of what I would like to work on in the
+          future (such as identity and publication design) and what I would not
+          be a great fit for (such as advertising).
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          I participated in a few projects during the time and spoke to as many
+          people as I could. I discovered the various schools offering a degree
+          in design and the different branches that people studied. Seeing how
+          much I was fascinated by this work, I made the resolve to pursue a
+          Master’s in design. I took up a short-term fine arts course at Chitra
+          Kala Parishath, a reputed institution for arts. The course gave me a
+          good exposure into working with various media, from clay sculpting to
+          print making. The library at CKP was a fascinating place for me, with
+          numerous books on design and art. I devoured these as I began to
+          prepare my portfolio and ready myself to apply to design school. I
+          made a list of schools I wanted to apply to and started the long road
+          to applying, giving exams and presenting my portfolio.
+        </p>
+
+        <h3 class="f3 f2-ns lh-title fw5 mt4 mt5-ns mb0 black-80">
+          Back to school
+        </h3>
+        <p class="f5 f4-ns lh-copy black-50">
+          I was accepted to join the Master’s degree at Srishti in Visual
+          Communication. Having worked a little in the field and prepared
+          myself, I was ready to work towards building a solid foundation now.
+          In the year and half so far, I have learned so much working with
+          faculty I deeply admire, exploring every fringe and corner of the
+          field and finding my voice within it. My projects varied from studying
+          color and typography, to making books and banners, to designing
+          signages and websites. I grew more confident in my use of visual
+          design.
+        </p>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/reflection/06.jpg" />
+        </div>
+        <p class="f5 f4-ns lh-copy black-50">
+          <em class="i coralred"
+            >I discovered my love for typography and type design.</em
+          >
+          One of the key projects in discovering this interest was the Text &
+          Image studio, mentored by Kumkum Nadig. I designed a book with
+          different iterations of expressing the same poem (Tolkien’s I Sit and
+          Think) by breaking down and combining different elements of design.
+          This project clearly portrayed the expressive power of type to me in
+          print media. I participated in various typography related conferences,
+          workshops, type walks and competitions and built a better
+          understanding of the depth and beauty of type.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          <em class="i coralred">I learned the skills for creative coding.</em>
+          As part of my Independent Study, I took up Processing, a creative
+          coding platform, popular among designers. This experience gave me the
+          fundamental skills of combining code and design to create dynamic
+          forms beyond static media. Processing is a fascinating project as it
+          so clearly the expands the scope of what designers can build without
+          burdening them with the tedium of coding from scratch. I read widely
+          about transmedia typography, studied the works of designers like Saul
+          Bass and Neville Brody (to name a few), and slowly understood the
+          scope of programmatic, rule-driven design.
+        </p>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/reflection/07.jpg" />
+        </div>
+        <p class="f5 f4-ns lh-copy black-50">
+          In my pre-cursor to the capstone, as part of my trans-disciplinary
+          studio, I picked Transmedia Typography as my premise. This combined
+          both my passion for typography and creative coding and placed it in
+          the context of technology’s influence of typographic practice. This
+          project in particular gave me the scope to study, experiment and
+          practice typography beyond print media under the able guidance of my
+          mentor Nupur Banerjee. Towards the end, I created a series of sketches
+          that ranged from static, temporal to interactive use of typography.
+          Due to time constraints, I couldn’t explore the depth of this field to
+          its fullest extent.
+        </p>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/reflection/08.png" />
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="
+        mw-page
+        ml-auto
+        mr-auto
+        flex flex-column flex-row-l
+        items-center
+        justify-center justify-between-l
+        mt5
+      "
+    >
+      <small class="w-100 w-third-l tc tl-l pv3 f4 lh-copy"
+        >© Priti Pandurangan 2022</small
+      >
+      <div class="w4 pv3 flex items-center justify-between">
+        <a
+          class="link dim hover dim"
+          href="https://www.linkedin.com/in/priti-pandurangan/"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/linkedin.svg" />
+        </a>
+
+        <a
+          class="link dim hover"
+          href="https://www.instagram.com/priti.pg"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/instagram.svg" />
+        </a>
+
+        <a class="link dim hover" href="mailto:where@priti.is" target="_blank">
+          <img class="w-icon" src="/assets/email.svg" />
+        </a>
+      </div>
+      <div class="w-100 w-third-l tc tr-l pv3 f4 lh-copy">
+        <a href="/thankful" class="link hover dim black-70"> Colophon </a>
+      </div>
+    </footer>
+  </body>
+</html>

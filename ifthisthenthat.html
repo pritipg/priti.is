@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priti Pandurangan</title>
+    <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="/assets/script.js"></script>
+  </head>
+  <body
+    class="mw-page ml-auto mr-auto mb4 ph5-ns ph4 jost black-70 bg-chalkwhite"
+    x-data="app"
+    :class="{ 'overflow-hidden': menuIsOpen }"
+  >
+    <header class="full-bleed bb bw2 b--coralred">
+      <nav
+        class="
+          flex
+          items-center
+          justify-end justify-center-ns
+          mv3
+          mw8
+          ml-auto
+          mr-auto
+        "
+      >
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in leftNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              >
+              </a>
+            </li>
+          </template>
+        </ul>
+        <div class="w-10 w-20-l flex items-center justify-center mr-nav mr0-ns">
+          <a href="/" title="Home">
+            <img style="width: 60px" src="/assets/header.svg" />
+          </a>
+        </div>
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in rightNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              ></a>
+            </li>
+          </template>
+        </ul>
+      </nav>
+
+      <div class="dn-ns">
+        <input
+          type="checkbox"
+          id="openmenu"
+          class="hamburger-checkbox z-5"
+          x-model="menuIsOpen"
+        />
+        <div class="hamburger-icon z-5">
+          <label for="openmenu" id="hamburger-label">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        <div class="menu-pane absolute top-0 left-0 bg-white z-4">
+          <nav class="w-100 pv6 ph4">
+            <ul role="list">
+              <template
+                x-for="(navItem, index) in navItems"
+                :key="navItem.link"
+              >
+                <li>
+                  <a
+                    x-bind:href="navItem.link"
+                    class="dib f4 fw3 ttu tracked link hover dim coralred"
+                    x-bind:class="{ 'mt4': index !== 0 }"
+                    x-text="navItem.title"
+                  >
+                  </a>
+                </li>
+              </template>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="mw8 ml-auto mr-auto">
+      <h1 class="butler f3 f2-l lh-title tc fw5 pt5 mv0">
+        Conditional Design Series
+      </h1>
+      <h2 class="f4 f3-l lh-title tc fw2 pb5 mt1 mb0 i">
+        if ( this ) then { that };
+      </h2>
+      <!-- LightWidget WIDGET -->
+      <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+      <iframe
+        src="https://cdn.lightwidget.com/widgets/f0ac1939a21a596b899b8c58bba1ba37.html"
+        scrolling="no"
+        allowtransparency="true"
+        class="lightwidget-widget"
+        style="width: 100%; border: 0; overflow: hidden"
+      ></iframe>
+    </main>
+
+    <footer
+      class="
+        mw-page
+        ml-auto
+        mr-auto
+        flex flex-column flex-row-l
+        items-center
+        justify-center justify-between-l
+        mt5
+      "
+    >
+      <small class="w-100 w-third-l tc tl-l pv3 f4 lh-copy"
+        >© Priti Pandurangan 2022</small
+      >
+      <div class="w4 pv3 flex items-center justify-between">
+        <a
+          class="link dim hover dim"
+          href="https://www.linkedin.com/in/priti-pandurangan/"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/linkedin.svg" />
+        </a>
+
+        <a
+          class="link dim hover"
+          href="https://www.instagram.com/priti.pg"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/instagram.svg" />
+        </a>
+
+        <a class="link dim hover" href="mailto:where@priti.is" target="_blank">
+          <img class="w-icon" src="/assets/email.svg" />
+        </a>
+      </div>
+      <div class="w-100 w-third-l tc tr-l pv3 f4 lh-copy">
+        <a href="/thankful" class="link hover dim black-70"> Colophon </a>
+      </div>
+    </footer>
+  </body>
+</html>

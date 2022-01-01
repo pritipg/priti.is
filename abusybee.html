@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priti Pandurangan</title>
+    <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="/assets/script.js"></script>
+  </head>
+  <body
+    class="mw-page ml-auto mr-auto mb4 ph5-ns ph4 jost black-70 bg-chalkwhite"
+    x-data="app"
+    :class="{ 'overflow-hidden': menuIsOpen }"
+  >
+    <header class="full-bleed bb bw2 b--coralred">
+      <nav
+        class="
+          flex
+          items-center
+          justify-end justify-center-ns
+          mv3
+          mw8
+          ml-auto
+          mr-auto
+        "
+      >
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in leftNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              >
+              </a>
+            </li>
+          </template>
+        </ul>
+        <div class="w-10 w-20-l flex items-center justify-center mr-nav mr0-ns">
+          <a href="/" title="Home">
+            <img style="width: 60px" src="/assets/header.svg" />
+          </a>
+        </div>
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in rightNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              ></a>
+            </li>
+          </template>
+        </ul>
+      </nav>
+
+      <div class="dn-ns">
+        <input
+          type="checkbox"
+          id="openmenu"
+          class="hamburger-checkbox z-5"
+          x-model="menuIsOpen"
+        />
+        <div class="hamburger-icon z-5">
+          <label for="openmenu" id="hamburger-label">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        <div class="menu-pane absolute top-0 left-0 bg-white z-4">
+          <nav class="w-100 pv6 ph4">
+            <ul role="list">
+              <template
+                x-for="(navItem, index) in navItems"
+                :key="navItem.link"
+              >
+                <li>
+                  <a
+                    x-bind:href="navItem.link"
+                    class="dib f4 fw3 ttu tracked link hover dim coralred"
+                    x-bind:class="{ 'mt4': index !== 0 }"
+                    x-text="navItem.title"
+                  >
+                  </a>
+                </li>
+              </template>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <h1 class="butler f3 f2-l lh-title tc fw5 pv5 mt0">
+        Design, code & everything in between
+      </h1>
+
+      <!-- BEGIN Projects -->
+      <section class="flex flex-column full-bleed">
+        <div class="cf w-100">
+          <div class="fl w-50-l w-100 relative">
+            <a href="/makingjoyfuldata" class="link">
+              <img
+                class="db w-100"
+                src="/assets/projects/joyfuldata/teaser.png"
+              />
+              <div
+                class="
+                  absolute
+                  top-0
+                  left-0
+                  w-100
+                  h-100
+                  flex
+                  items-center
+                  justify-center
+                  o-0
+                  glow
+                  bg-white-60
+                "
+              >
+                <div
+                  class="
+                    butler
+                    f3
+                    f2-l
+                    bt
+                    bb
+                    b--black-90
+                    bw1
+                    ph2
+                    pv1
+                    black-90
+                    w-max-s80
+                    tc
+                  "
+                >
+                  Joyful Data
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="fl w-25-l w-50-m w-100 relative">
+            <a href="/movingtypeinspace" class="link">
+              <img
+                class="db w-100"
+                src="/assets/projects/meghadutam/teaser.gif"
+              />
+              <div
+                class="
+                  absolute
+                  top-0
+                  left-0
+                  w-100
+                  h-100
+                  flex
+                  items-center
+                  justify-center
+                  o-0
+                  glow
+                  bg-white-60
+                "
+              >
+                <div
+                  class="
+                    butler
+                    f3
+                    f2-l
+                    bt
+                    bb
+                    b--black-90
+                    bw1
+                    ph2
+                    pv1
+                    black-90
+                    w-max-80
+                    tc
+                  "
+                >
+                  Asking a Shadow to Dance
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="fl w-25-l w-50-m w-100 relative">
+            <a href="/sadaboutcoralreefs" class="link">
+              <img
+                class="db w-100"
+                src="/assets/projects/coralreefs/teaser.png"
+              />
+              <div
+                class="
+                  absolute
+                  top-0
+                  left-0
+                  w-100
+                  h-100
+                  flex
+                  items-center
+                  justify-center
+                  o-0
+                  glow
+                  bg-white-60
+                "
+              >
+                <div
+                  class="
+                    butler
+                    f3
+                    f2-l
+                    bt
+                    bb
+                    b--black-90
+                    bw1
+                    ph2
+                    pv1
+                    black-90
+                    w-max-80
+                    tc
+                  "
+                >
+                  Coral Bleaching
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="cf w-100">
+          <div class="fl w-50-l w-100 relative">
+            <a href="/lockeddown" class="link">
+              <img
+                class="db w-100"
+                src="/assets/projects/pandemic/teaser.png"
+              />
+              <div
+                class="
+                  absolute
+                  top-0
+                  left-0
+                  w-100
+                  h-100
+                  flex
+                  items-center
+                  justify-center
+                  o-0
+                  glow
+                  bg-white-60
+                "
+              >
+                <div
+                  class="
+                    butler
+                    f3
+                    f2-l
+                    bt
+                    bb
+                    b--black-90
+                    bw1
+                    ph2
+                    pv1
+                    black-90
+                    w-max-80
+                    tc
+                  "
+                >
+                  Pandemic Pandæmonium
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="fl w-50-l w-100 relative">
+            <a href="/onfire" class="link">
+              <img class="db w-100" src="/assets/projects/tolkein/teaser.png" />
+              <div
+                class="
+                  absolute
+                  top-0
+                  left-0
+                  w-100
+                  h-100
+                  flex
+                  items-center
+                  justify-center
+                  o-0
+                  glow
+                  bg-white-60
+                "
+              >
+                <div
+                  class="
+                    butler
+                    f3
+                    f2-l
+                    bt
+                    bb
+                    b--black-90
+                    bw1
+                    ph2
+                    pv1
+                    black-90
+                    w-max-80
+                    tc
+                  "
+                >
+                  I Sit & Think
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="cf w-100">
+          <div class="fl w-100 relative">
+            <a href="/memorisingpi" class="link">
+              <img class="db w-100" src="/assets/projects/pigame/teaser.png" />
+              <div
+                class="
+                  absolute
+                  top-0
+                  left-0
+                  w-100
+                  h-100
+                  flex
+                  items-center
+                  justify-center
+                  o-0
+                  glow
+                  bg-white-60
+                "
+              >
+                <div
+                  class="
+                    butler
+                    f3
+                    f2-l
+                    bt
+                    bb
+                    b--black-90
+                    bw1
+                    ph2
+                    pv1
+                    black-90
+                    w-max-80
+                    tc
+                  "
+                >
+                  For the Love of Numbers
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="cf w-100">
+          <div class="fl w-25-l w-50-m w-100 relative">
+            <a href="/sweetassugar" class="link">
+              <img class="db w-100" src="/assets/projects/tonga/teaser.png" />
+              <div
+                class="
+                  absolute
+                  top-0
+                  left-0
+                  w-100
+                  h-100
+                  flex
+                  items-center
+                  justify-center
+                  o-0
+                  glow
+                  bg-white-60
+                "
+              >
+                <div
+                  class="
+                    butler
+                    f3
+                    f2-l
+                    bt
+                    bb
+                    b--black-90
+                    bw1
+                    ph2
+                    pv1
+                    black-90
+                    w-max-80
+                    tc
+                  "
+                >
+                  Our Fattening World
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="fl w-25-l w-50-m w-100 relative">
+            <a href="/creatingdatabookmarks" class="link">
+              <img class="db w-100" src="/assets/projects/imprint/teaser.png" />
+              <div
+                class="
+                  absolute
+                  top-0
+                  left-0
+                  w-100
+                  h-100
+                  flex
+                  items-center
+                  justify-center
+                  o-0
+                  glow
+                  bg-white-60
+                "
+              >
+                <div
+                  class="
+                    butler
+                    f3
+                    f2-l
+                    bt
+                    bb
+                    b--black-90
+                    bw1
+                    ph2
+                    pv1
+                    black-90
+                    w-max-80
+                    tc
+                  "
+                >
+                  Data Imprint
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="fl w-50-l w-100 relative">
+            <a href="/transdisciplinary" class="link">
+              <img
+                class="db w-100"
+                src="/assets/projects/transmedia/teaser.png"
+              />
+              <div
+                class="
+                  absolute
+                  top-0
+                  left-0
+                  w-100
+                  h-100
+                  flex
+                  items-center
+                  justify-center
+                  o-0
+                  glow
+                  bg-white-60
+                "
+              >
+                <div
+                  class="
+                    butler
+                    f3
+                    f2-l
+                    bt
+                    bb
+                    b--black-90
+                    bw1
+                    ph2
+                    pv1
+                    black-90
+                    w-max-80
+                    tc
+                  "
+                >
+                  Transmedia Typography
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="cf w-100">
+          <div class="fl w-50-l w-100 relative">
+            <a href="/designingforsrishticollective" class="link">
+              <img
+                class="db w-100"
+                src="/assets/projects/collective/teaser.png"
+              />
+              <div
+                class="
+                  absolute
+                  top-0
+                  left-0
+                  w-100
+                  h-100
+                  flex
+                  items-center
+                  justify-center
+                  o-0
+                  glow
+                  bg-white-60
+                "
+              >
+                <div
+                  class="
+                    butler
+                    f3
+                    f2-l
+                    bt
+                    bb
+                    b--black-90
+                    bw1
+                    ph2
+                    pv1
+                    black-90
+                    w-max-80
+                    tc
+                  "
+                >
+                  Srishti Collective 2018
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="fl w-50-l w-100 relative">
+            <a href="/fordiversity" class="link">
+              <img class="db w-100" src="/assets/projects/moma/teaser.png" />
+              <div
+                class="
+                  absolute
+                  top-0
+                  left-0
+                  w-100
+                  h-100
+                  flex
+                  items-center
+                  justify-center
+                  o-0
+                  glow
+                  bg-white-60
+                "
+              >
+                <div
+                  class="
+                    butler
+                    f3
+                    f2-l
+                    bt
+                    bb
+                    b--black-90
+                    bw1
+                    ph2
+                    pv1
+                    black-90
+                    w-max-80
+                    tc
+                  "
+                >
+                  Is the World of Art Embracing Diversity?
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- END Projects -->
+    </main>
+
+    <footer
+      class="
+        mw-page
+        ml-auto
+        mr-auto
+        flex flex-column flex-row-l
+        items-center
+        justify-center justify-between-l
+        mt5
+      "
+    >
+      <small class="w-100 w-third-l tc tl-l pv3 f4 lh-copy"
+        >© Priti Pandurangan 2022</small
+      >
+      <div class="w4 pv3 flex items-center justify-between">
+        <a
+          class="link dim hover dim"
+          href="https://www.linkedin.com/in/priti-pandurangan/"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/linkedin.svg" />
+        </a>
+
+        <a
+          class="link dim hover"
+          href="https://www.instagram.com/priti.pg"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/instagram.svg" />
+        </a>
+
+        <a class="link dim hover" href="mailto:where@priti.is" target="_blank">
+          <img class="w-icon" src="/assets/email.svg" />
+        </a>
+      </div>
+      <div class="w-100 w-third-l tc tr-l pv3 f4 lh-copy">
+        <a href="/thankful" class="link hover dim black-70"> Colophon </a>
+      </div>
+    </footer>
+  </body>
+</html>

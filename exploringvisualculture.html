@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priti Pandurangan</title>
+    <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="/assets/script.js"></script>
+  </head>
+  <body
+    class="mw-page ml-auto mr-auto mb4 ph5-ns ph4 jost black-70 bg-chalkwhite"
+    x-data="app"
+    :class="{ 'overflow-hidden': menuIsOpen }"
+  >
+    <header class="full-bleed bb bw2 b--coralred">
+      <nav
+        class="
+          flex
+          items-center
+          justify-end justify-center-ns
+          mv3
+          mw8
+          ml-auto
+          mr-auto
+        "
+      >
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in leftNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              >
+              </a>
+            </li>
+          </template>
+        </ul>
+        <div class="w-10 w-20-l flex items-center justify-center mr-nav mr0-ns">
+          <a href="/" title="Home">
+            <img style="width: 60px" src="/assets/header.svg" />
+          </a>
+        </div>
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in rightNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              ></a>
+            </li>
+          </template>
+        </ul>
+      </nav>
+
+      <div class="dn-ns">
+        <input
+          type="checkbox"
+          id="openmenu"
+          class="hamburger-checkbox z-5"
+          x-model="menuIsOpen"
+        />
+        <div class="hamburger-icon z-5">
+          <label for="openmenu" id="hamburger-label">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        <div class="menu-pane absolute top-0 left-0 bg-white z-4">
+          <nav class="w-100 pv6 ph4">
+            <ul role="list">
+              <template
+                x-for="(navItem, index) in navItems"
+                :key="navItem.link"
+              >
+                <li>
+                  <a
+                    x-bind:href="navItem.link"
+                    class="dib f4 fw3 ttu tracked link hover dim coralred"
+                    x-bind:class="{ 'mt4': index !== 0 }"
+                    x-text="navItem.title"
+                  >
+                  </a>
+                </li>
+              </template>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="bg-coralred full-bleed ph4 ph5-l pt4 pb7 white">
+        <h1 class="butler f3 f2-l lh-title tc fw5 pt5 mv0">Dérive</h1>
+        <h2 class="f4 f3-l lh-title tc fw3 pb5 mt1 mb0 i white-90">
+          Drifting through the lanes of Bengaluru
+        </h2>
+      </section>
+
+      <section
+        class="
+          mw-blog
+          ml-auto
+          mr-auto
+          bg-white
+          br3-ns
+          pa4
+          pa5-m pa5-l
+          full-bleed-s
+        "
+        style="margin-top: -14rem"
+      >
+        <div class="mb4">
+          <img class="w-100" src="/assets/writings/derive/image-splash.jpg" />
+        </div>
+        <blockquote class="mt5 mb4">
+          <p class="butler f4 f3-ns lh-copy black-90 pull-quote">
+            But a city is more than a place in space, it is a drama in time.
+          </p>
+
+          <p class="butler f4 f3-ns lh-copy i black-90 fw3">
+            &mdash; Patrick Geddes
+          </p>
+        </blockquote>
+        <p class="f5 f4-ns lh-copy black-50">
+          A dérive, as defined by Guy Debord, is an unplanned journey through an
+          urban environment in which the participants set aside their everyday
+          behaviors and let themselves be freely drawn to various attractions
+          and encounters they find on their way. A practice originating from the
+          Situationist movement, dérives are intended to study how a place
+          affects the emotions and behaviors of an individual (also known as
+          psychogeography).
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          In the spirit of dérive, I walked through various popular landmarks in
+          Bengaluru and captured the moods and emotions of the place while
+          letting go of any preconceived notions. This project attempts to
+          capture my encounter with people and places, what I saw and what I
+          felt.
+        </p>
+
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/derive/mindmap-splash.jpg" />
+        </div>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/derive/image-03a.jpg" />
+        </div>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/derive/image-03b.jpg" />
+        </div>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/derive/image-04a.jpg" />
+        </div>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/derive/image-04b.jpg" />
+        </div>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/derive/image-05a.jpg" />
+        </div>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/derive/image-05b.jpg" />
+        </div>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/derive/image-05c.jpg" />
+        </div>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/derive/image-05d.jpg" />
+        </div>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/derive/image-06a.jpg" />
+        </div>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/derive/image-06b.jpg" />
+        </div>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/derive/image-06c.jpg" />
+        </div>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/derive/image-07a.jpg" />
+        </div>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/derive/image-07b.jpg" />
+        </div>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/derive/image-07c.jpg" />
+        </div>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/derive/image-07d.jpg" />
+        </div>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/derive/image-08a.jpg" />
+        </div>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/derive/image-08b.jpg" />
+        </div>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/derive/image-08c.jpg" />
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="
+        mw-page
+        ml-auto
+        mr-auto
+        flex flex-column flex-row-l
+        items-center
+        justify-center justify-between-l
+        mt5
+      "
+    >
+      <small class="w-100 w-third-l tc tl-l pv3 f4 lh-copy"
+        >© Priti Pandurangan 2022</small
+      >
+      <div class="w4 pv3 flex items-center justify-between">
+        <a
+          class="link dim hover dim"
+          href="https://www.linkedin.com/in/priti-pandurangan/"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/linkedin.svg" />
+        </a>
+
+        <a
+          class="link dim hover"
+          href="https://www.instagram.com/priti.pg"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/instagram.svg" />
+        </a>
+
+        <a class="link dim hover" href="mailto:where@priti.is" target="_blank">
+          <img class="w-icon" src="/assets/email.svg" />
+        </a>
+      </div>
+      <div class="w-100 w-third-l tc tr-l pv3 f4 lh-copy">
+        <a href="/thankful" class="link hover dim black-70"> Colophon </a>
+      </div>
+    </footer>
+  </body>
+</html>

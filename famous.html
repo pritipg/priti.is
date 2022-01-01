@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priti Pandurangan</title>
+    <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="/assets/script.js"></script>
+  </head>
+  <body
+    class="mw-page ml-auto mr-auto mb4 ph5-ns ph4 jost black-70 bg-chalkwhite"
+    x-data="app"
+    :class="{ 'overflow-hidden': menuIsOpen }"
+  >
+    <header class="full-bleed bb bw2 b--coralred">
+      <nav
+        class="
+          flex
+          items-center
+          justify-end justify-center-ns
+          mv3
+          mw8
+          ml-auto
+          mr-auto
+        "
+      >
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in leftNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              >
+              </a>
+            </li>
+          </template>
+        </ul>
+        <div class="w-10 w-20-l flex items-center justify-center mr-nav mr0-ns">
+          <a href="/" title="Home">
+            <img style="width: 60px" src="/assets/header.svg" />
+          </a>
+        </div>
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in rightNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              ></a>
+            </li>
+          </template>
+        </ul>
+      </nav>
+
+      <div class="dn-ns">
+        <input
+          type="checkbox"
+          id="openmenu"
+          class="hamburger-checkbox z-5"
+          x-model="menuIsOpen"
+        />
+        <div class="hamburger-icon z-5">
+          <label for="openmenu" id="hamburger-label">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        <div class="menu-pane absolute top-0 left-0 bg-white z-4">
+          <nav class="w-100 pv6 ph4">
+            <ul role="list">
+              <template
+                x-for="(navItem, index) in navItems"
+                :key="navItem.link"
+              >
+                <li>
+                  <a
+                    x-bind:href="navItem.link"
+                    class="dib f4 fw3 ttu tracked link hover dim coralred"
+                    x-bind:class="{ 'mt4': index !== 0 }"
+                    x-text="navItem.title"
+                  >
+                  </a>
+                </li>
+              </template>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <h1 class="butler f2 lh-title tc fw5 pv5 mt0">Features & recognitions</h1>
+
+      <!-- BEGIN Recognitions -->
+      <section class="flex flex-column mt5">
+        <div class="cf">
+          <div class="fl w-100 pr0 w-50-l pr4-l">
+            <h2 class="butler f2 fw5 lh-title measure mv0">Features</h2>
+            <ul class="list pl0 mt4 mb0">
+              <template
+                x-for="(feature, index) in features"
+                :key="feature.title"
+              >
+                <li>
+                  <div
+                    class="flex flex-column bb b--black-10 pv3"
+                    x-bind:class="index === 0 ? 'bt' : ''"
+                  >
+                    <div class="w-100">
+                      <h3
+                        class="f4 fw4 lh-title mb0 mt2"
+                        x-text="feature.title"
+                      ></h3>
+                    </div>
+                    <div class="w-100">
+                      <template
+                        x-for="appearance in feature.appearances"
+                        :key="appearance.publication"
+                      >
+                        <div class="flex flex-column flex-row-ns">
+                          <a
+                            :href="appearance.link"
+                            target="_blank"
+                            class="w-100 w-80-m link dim hover mt2"
+                          >
+                            <span
+                              class="f5 fw4 lh-title black-60"
+                              x-text="appearance.publication"
+                            ></span>
+                            <template x-if="appearance.link">
+                              &nbsp;<span class="coralred f6 mh1">↗</span>
+                            </template>
+                          </a>
+
+                          <div
+                            class="
+                              w-100 w-20-m
+                              f5
+                              fw4
+                              lh-copy
+                              mt0
+                              mt2-ns
+                              tr-ns
+                              black-40
+                            "
+                            x-text="appearance.date"
+                          ></div>
+                        </div>
+                      </template>
+                    </div>
+                  </div>
+                </li>
+              </template>
+            </ul>
+          </div>
+          <div class="fr w-100 pr0 mt4 w-50-l pl4-l mt0-l">
+            <h2 class="butler f2 fw5 lh-title measure mv0">Recognitions</h2>
+            <ul class="list pl0 mt4 mb0">
+              <template
+                x-for="(recognition, index) in recognitions"
+                :key="recognition.title"
+              >
+                <li>
+                  <div
+                    class="flex flex-column bb b--black-10 pv3"
+                    x-bind:class="index === 0 ? 'bt' : ''"
+                  >
+                    <div class="w-100">
+                      <h3
+                        class="f4 fw4 lh-title mb0 mt2"
+                        x-text="recognition.title"
+                      ></h3>
+                      <h4
+                        class="f5 fw4 lh-body mb0 mt2"
+                        x-text="recognition.subtitle"
+                      ></h4>
+                    </div>
+                    <div class="w-100">
+                      <template
+                        x-for="appearance in recognition.appearances"
+                        :key="appearance.event"
+                      >
+                        <div class="flex flex-column flex-row-ns">
+                          <a
+                            :href="appearance.link"
+                            target="_blank"
+                            class="w-100 w-80-m link dim hover mt2"
+                          >
+                            <span
+                              class="f5 fw4 lh-title black-60"
+                              x-text="appearance.event"
+                            ></span>
+                            <template x-if="appearance.link">
+                              &nbsp;<span class="coralred f6 mh1">↗</span>
+                            </template>
+                          </a>
+
+                          <div
+                            class="
+                              w-100 w-20-ns
+                              f5
+                              fw4
+                              lh-copy
+                              mt0
+                              mt2-ns
+                              tr-ns
+                              black-40
+                            "
+                            x-text="appearance.date"
+                          ></div>
+                        </div>
+                      </template>
+                    </div>
+                  </div>
+                </li>
+              </template>
+            </ul>
+          </div>
+        </div>
+        <a
+          href="/"
+          class="f5 mt3 fw4 link dim hover self-end-ns self-start kittu-blue"
+        >
+          View all features & recognitions &rarr;
+        </a>
+      </section>
+      <!-- END Recognitions -->
+    </main>
+
+    <footer
+      class="
+        mw-page
+        ml-auto
+        mr-auto
+        flex flex-column flex-row-l
+        items-center
+        justify-center justify-between-l
+        mt5
+      "
+    >
+      <small class="w-100 w-third-l tc tl-l pv3 f4 lh-copy"
+        >© Priti Pandurangan 2022</small
+      >
+      <div class="w4 pv3 flex items-center justify-between">
+        <a
+          class="link dim hover dim"
+          href="https://www.linkedin.com/in/priti-pandurangan/"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/linkedin.svg" />
+        </a>
+
+        <a
+          class="link dim hover"
+          href="https://www.instagram.com/priti.pg"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/instagram.svg" />
+        </a>
+
+        <a class="link dim hover" href="mailto:where@priti.is" target="_blank">
+          <img class="w-icon" src="/assets/email.svg" />
+        </a>
+      </div>
+      <div class="w-100 w-third-l tc tr-l pv3 f4 lh-copy">
+        <a href="/thankful" class="link hover dim black-70"> Colophon </a>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priti Pandurangan</title>
+    <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="/assets/script.js"></script>
+  </head>
+  <body
+    class="mw-page ml-auto mr-auto mb4 ph5-ns ph4 jost black-70 bg-chalkwhite"
+    x-data="app"
+    :class="{ 'overflow-hidden': menuIsOpen }"
+  >
+    <header class="full-bleed bb bw2 b--coralred">
+      <nav
+        class="
+          flex
+          items-center
+          justify-end justify-center-ns
+          mv3
+          mw8
+          ml-auto
+          mr-auto
+        "
+      >
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in leftNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              >
+              </a>
+            </li>
+          </template>
+        </ul>
+        <div class="w-10 w-20-l flex items-center justify-center mr-nav mr0-ns">
+          <a href="/" title="Home">
+            <img style="width: 60px" src="/assets/header.svg" />
+          </a>
+        </div>
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in rightNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              ></a>
+            </li>
+          </template>
+        </ul>
+      </nav>
+
+      <div class="dn-ns">
+        <input
+          type="checkbox"
+          id="openmenu"
+          class="hamburger-checkbox z-5"
+          x-model="menuIsOpen"
+        />
+        <div class="hamburger-icon z-5">
+          <label for="openmenu" id="hamburger-label">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        <div class="menu-pane absolute top-0 left-0 bg-white z-4">
+          <nav class="w-100 pv6 ph4">
+            <ul role="list">
+              <template
+                x-for="(navItem, index) in navItems"
+                :key="navItem.link"
+              >
+                <li>
+                  <a
+                    x-bind:href="navItem.link"
+                    class="dib f4 fw3 ttu tracked link hover dim coralred"
+                    x-bind:class="{ 'mt4': index !== 0 }"
+                    x-text="navItem.title"
+                  >
+                  </a>
+                </li>
+              </template>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="mw8 ml-auto mr-auto">
+      <h1 class="butler f3 f2-l lh-title tc fw5 pt5 mv0">
+        Srishti Collective 2018
+      </h1>
+      <h2 class="f4 f3-l lh-title tc fw2 pb5 mt1 mb0 i">
+        A branding and spatial design&nbsp;project
+      </h2>
+      <div class="full-bleed">
+        <img class="w-100" src="/assets/projects/collective/cover.jpg" />
+      </div>
+      <div class="cf mt5">
+        <div class="fl w-100 w-50-ns">
+          <h3 class="f3 lh-title fw5 mv0 dot">Concept</h3>
+        </div>
+        <div class="fl w-100 w-50-ns">
+          <div class="f4 lh-copy measure black-50 mt0-ns mt4">
+            Srishti Collective is an annual curated exhibition of projects
+            created by graduating batch of students from Srishti.
+          </div>
+          <div class="f4 lh-copy measure black-50 mt3">
+            This branding project aimed to embody the characteristics that
+            represent Srishti and this year's collective.
+          </div>
+          <h3 class="f4 lh-title fw5 mt4 mb1 black-70">Mentors</h3>
+          <a
+            class="db f4 lh-copy measure black-50 mt3 link hover dim"
+            href="https://www.linkedin.com/in/kumkum-nadig-b700b95"
+            target="_blank"
+            >Kumkum Nadig</a
+          >
+          <a
+            class="db f4 lh-copy measure black-50 link hover dim mt1"
+            href="https://www.linkedin.com/in/nupurbanerjee"
+            target="_blank"
+            >Nupur Banerjee</a
+          >
+        </div>
+      </div>
+      <div class="cf w-100 mt5 bg-white pa3 pa5-ns full-bleed">
+        <h4 class="f4 lh-title measure ttu fw5 v3">Ideation</h4>
+        <div class="cf w-100 mt3 mt5-ns">
+          <div class="fl w-100">
+            <img
+              class="w-100"
+              src="/assets/projects/collective/ideation-02.jpg"
+            />
+          </div>
+          <div class="fl w-100">
+            <img
+              class="w-100"
+              src="/assets/projects/collective/ideation-01.jpg"
+            />
+          </div>
+          <div class="fl w-100">
+            <img
+              class="w-100"
+              src="/assets/projects/collective/ideation-05.jpg"
+            />
+          </div>
+        </div>
+
+        <h4 class="f4 lh-title measure ttu fw5 mt5 mb3">Select Iterations</h4>
+
+        <div class="cf w-100 mt3 mt5-ns">
+          <div class="fl w-100 w-third-l">
+            <h5 class="f5 lh-title measure ttu fw5 mt0 mb3">Logo A</h5>
+            <div class="f4 lh-copy measure black-50">
+              In this logo, Srishti Collective is represented as a stylised
+              circuit with elements representing the letters "S" and "C".
+              Similar to the notion of an electrical circuit, this logo evokes
+              the idea of containing, channelling and transforming the energy of
+              Srishti's many students and faculty to create a singular, powerful
+              experience: the Collective. The arcs used to denote "S" and "C"
+              represent opening doors, while the dot acts as an element
+              representing concentrated energy.
+            </div>
+          </div>
+          <div class="fl w-100 w-two-thirds-l pl5-l mt0-l mt4">
+            <div class="fl w-100 w-third-ns ph2-ns">
+              <img
+                class="w-100"
+                src="/assets/projects/collective/logo2a-01.png"
+              />
+            </div>
+            <div class="fl w-100 w-third-ns ph2-ns">
+              <img
+                class="w-100"
+                src="/assets/projects/collective/logo2a-02.png"
+              />
+            </div>
+            <div class="fl w-100 w-third-ns ph2-ns">
+              <img
+                class="w-100"
+                src="/assets/projects/collective/logo2a-03.png"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="cf w-100 mt3 mt5-ns">
+          <div class="fl w-100 w-third-l">
+            <h5 class="f5 lh-title measure ttu fw5 mt0 mb3">Logo B</h5>
+            <div class="f4 lh-copy measure black-50">
+              This logo plays with the idea of individual pieces connecting
+              together to make a whole. The foreground depicts blocks coming
+              together around a central dot; the background depicts the inter
+              wining of the letters S and C, representing the Srishti
+              collective. The dot focuses the attention and acts as the centre
+              of the logo. The rotation denotes dynamism and intrigue.
+            </div>
+          </div>
+          <div class="fl w-100 w-two-thirds-l pl5-l mt0-l mt4">
+            <div class="fl w-100 w-third-ns ph2-ns">
+              <img
+                class="w-100"
+                src="/assets/projects/collective/logo2b-01.png"
+              />
+            </div>
+            <div class="fl w-100 w-third-ns ph2-ns">
+              <img
+                class="w-100"
+                src="/assets/projects/collective/logo2b-02.png"
+              />
+            </div>
+            <div class="fl w-100 w-third-ns ph2-ns">
+              <img
+                class="w-100"
+                src="/assets/projects/collective/logo2b-03.png"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="cf w-100 mt3 mt5-ns">
+          <h4 class="f4 lh-title measure ttu fw5 mv3">
+            Final Logo &mdash; Collaborative Work
+          </h4>
+          <div class="fl w-100 mt0-l mt4">
+            <div class="fl w-100 w-third-ns ph2-ns">
+              <img
+                class="w-100"
+                src="/assets/projects/collective/logo3a-01.png"
+              />
+            </div>
+            <div class="fl w-100 w-third-ns ph2-ns">
+              <img
+                class="w-100"
+                src="/assets/projects/collective/logo3a-02.png"
+              />
+            </div>
+            <div class="fl w-100 w-third-ns ph2-ns">
+              <img
+                class="w-100"
+                src="/assets/projects/collective/logo3a-03.png"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cf mt5">
+        <div class="fl w-100 w-25-ns">
+          <h3 class="f4 lh-title fw5 ttu mv0">Collaterals</h3>
+        </div>
+        <div class="fl w-100 w-75-ns mt0-ns mt4">
+          <img
+            class="w-100 pb2"
+            src="/assets/projects/collective/content-splash.jpg"
+          />
+          <img
+            class="w-100 pv2"
+            src="/assets/projects/collective/book-splash.jpg"
+          />
+          <img
+            class="w-100 pv2"
+            src="/assets/projects/collective/school-splash.jpg"
+          />
+          <img
+            class="w-100 pt2"
+            src="/assets/projects/collective/invite-splash.jpg"
+          />
+        </div>
+      </div>
+
+      <div class="cf mt5">
+        <div class="fl w-100 w-25-ns">
+          <h3 class="f4 lh-title fw5 ttu mv0">Exhibition</h3>
+          <div class="f5 lh-copy measure black-50 mt1">
+            Photo credit: Mahesh Bhatt
+          </div>
+        </div>
+        <div class="fl w-100 w-75-ns mt0-ns mt4">
+          <img
+            class="w-100 pb2"
+            src="/assets/projects/collective/expo-01.jpg"
+          />
+          <img
+            class="w-100 pv2"
+            src="/assets/projects/collective/expo-02.jpg"
+          />
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="
+        mw-page
+        ml-auto
+        mr-auto
+        flex flex-column flex-row-l
+        items-center
+        justify-center justify-between-l
+        mt5
+      "
+    >
+      <small class="w-100 w-third-l tc tl-l pv3 f4 lh-copy"
+        >© Priti Pandurangan 2022</small
+      >
+      <div class="w4 pv3 flex items-center justify-between">
+        <a
+          class="link dim hover dim"
+          href="https://www.linkedin.com/in/priti-pandurangan/"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/linkedin.svg" />
+        </a>
+
+        <a
+          class="link dim hover"
+          href="https://www.instagram.com/priti.pg"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/instagram.svg" />
+        </a>
+
+        <a class="link dim hover" href="mailto:where@priti.is" target="_blank">
+          <img class="w-icon" src="/assets/email.svg" />
+        </a>
+      </div>
+      <div class="w-100 w-third-l tc tr-l pv3 f4 lh-copy">
+        <a href="/thankful" class="link hover dim black-70"> Colophon </a>
+      </div>
+    </footer>
+  </body>
+</html>

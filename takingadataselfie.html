@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priti Pandurangan</title>
+    <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="/assets/script.js"></script>
+  </head>
+  <body
+    class="mw-page ml-auto mr-auto mb4 ph5-ns ph4 jost black-70 bg-chalkwhite"
+    x-data="app"
+    :class="{ 'overflow-hidden': menuIsOpen }"
+  >
+    <header class="full-bleed bb bw2 b--coralred">
+      <nav
+        class="
+          flex
+          items-center
+          justify-end justify-center-ns
+          mv3
+          mw8
+          ml-auto
+          mr-auto
+        "
+      >
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in leftNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              >
+              </a>
+            </li>
+          </template>
+        </ul>
+        <div class="w-10 w-20-l flex items-center justify-center mr-nav mr0-ns">
+          <a href="/" title="Home">
+            <img style="width: 60px" src="/assets/header.svg" />
+          </a>
+        </div>
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in rightNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              ></a>
+            </li>
+          </template>
+        </ul>
+      </nav>
+
+      <div class="dn-ns">
+        <input
+          type="checkbox"
+          id="openmenu"
+          class="hamburger-checkbox z-5"
+          x-model="menuIsOpen"
+        />
+        <div class="hamburger-icon z-5">
+          <label for="openmenu" id="hamburger-label">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        <div class="menu-pane absolute top-0 left-0 bg-white z-4">
+          <nav class="w-100 pv6 ph4">
+            <ul role="list">
+              <template
+                x-for="(navItem, index) in navItems"
+                :key="navItem.link"
+              >
+                <li>
+                  <a
+                    x-bind:href="navItem.link"
+                    class="dib f4 fw3 ttu tracked link hover dim coralred"
+                    x-bind:class="{ 'mt4': index !== 0 }"
+                    x-text="navItem.title"
+                  >
+                  </a>
+                </li>
+              </template>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="bg-coralred full-bleed ph4 ph5-l pt4 pb7 white">
+        <h1 class="butler f3 f2-l lh-title tc fw5 pt5 mv0">
+          Come, Let&rsquo;s Take a (Data) Selfie
+        </h1>
+        <h2 class="f4 f3-l lh-title tc fw3 pb5 mt1 mb0 i white-90">
+          Collecting Audience Insight through Interactive Play at UX India 2019
+        </h2>
+      </section>
+
+      <section
+        class="
+          mw-blog
+          ml-auto
+          mr-auto
+          bg-white
+          br3-ns
+          pa4
+          pa5-m
+          pa6-l
+          full-bleed-s
+        "
+        style="margin-top: -14rem"
+      >
+        <div class="mb4 w-100">
+          <img class="w-100" src="/assets/writings/selfie/01.jpg" />
+        </div>
+        <p class="f5 f4-ns lh-copy black-50">
+          <strong class="b coralred fw6">Intent.</strong> Block print in a
+          physical data art installation that aims to collect and reveal
+          patterns about self-reported characteristics of an audience through a
+          fun, engaging exercise.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          <strong class="b coralred fw6">Data collection.</strong> The audience
+          was posed with a series of simple, light-hearted questions aimed at
+          eliciting their personality. For example, some of the questions were:
+          Are you a tea or coffee person? Do you use an iPhone or an Android
+          phone? Do you write straight or slanted? For each question, the
+          possible answers were encoded in physical stamps for the audience to
+          use.
+        </p>
+
+        <h3 class="f3 f2-ns lh-title fw5 mt4 mt5-ns mb0 black-80">
+          Visual encoding
+        </h3>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/selfie/02.jpg" />
+        </div>
+        <p class="f5 f4-ns lh-copy black-50">
+          <strong class="b coralred fw6">Iconography.</strong> The custom stamps
+          were designed to be as intuitive and iconic as possible. For instance,
+          to distinguish iOS and Android phones, a simple phone icon was
+          designed with a single home button to represent iOS and three home
+          buttons to represent Android.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          <strong class="b coralred fw6">Color.</strong> The first question
+          asked to the audience was designed to bucket them into two categories,
+          people who enjoy company or people who prefer their own corner. The
+          color of the stamp pads used by the audience was decided based on the
+          answer to this question.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          <strong class="b coralred fw6">Tags.</strong> Given the large number
+          of stamps, we found it useful to attach tags to each each stamp
+          clearly indication its icon to help the audience find and use the
+          stamps corresponding to their choice.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          <strong class="b coralred fw6">The canvas.</strong> A large canvas was
+          installed along with instructions, the answer stamps and stamp pads.
+          The canvas was sectioned into grids for use by the audience. One grid
+          consisted of 10 cells, one for each question. As the audience went
+          through the questions, they picked up the stamps corresponding to
+          their answers and left their imprint on the corresponding cell.
+        </p>
+
+        <h3 class="f3 f2-ns lh-title fw5 mt4 mt5-ns mb0 black-80">
+          Learnings from the data
+        </h3>
+        <p class="f5 f4-ns lh-copy black-50">
+          As the answers were collected, the canvas evolved into a portrait
+          representing the diverse personality of the audience. While the final
+          piece qualifies as data art, it also provides us a picture with common
+          patterns depicting the audience. Some of the interesting patterns
+          observed were:
+        </p>
+        <ol>
+          <li>
+            <p class="f5 f4-ns lh-copy black-50">
+              Extroverts are more likely to be iPhone users.
+            </p>
+          </li>
+          <li>
+            <p class="f5 f4-ns lh-copy black-50">
+              UXIndia attendees were more likely to be on Instagram than other
+              social platforms.
+            </p>
+          </li>
+        </ol>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/selfie/03.jpg" />
+        </div>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/selfie/04.jpg" />
+        </div>
+
+        <h3 class="f3 f2-ns lh-title fw5 mt4 mt5-ns mb0 black-80">
+          Learnings from the experience
+        </h3>
+        <p class="f5 f4-ns lh-copy black-50">
+          Some members of the audience observed that, this may be a good
+          exercise to collect data during user experience research.
+          Particularly, the use of a collective physical space to engage an
+          audience would be more effective than rote form filling.
+        </p>
+
+        <h3 class="f3 f2-ns lh-title fw5 mt4 mt5-ns mb0 black-80">
+          Design learnings
+        </h3>
+        <p class="f5 f4-ns lh-copy black-50">
+          Some members of the audience had difficulty in establishing a reading
+          order in the instructions. Some read the questions left to right,
+          while others read them top to bottom. It would be better next time to
+          improve the readability of the instructions and establish a consistent
+          format between the questions and the answer grid.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          Some members skipped through the instructions and jump straight into
+          stamping. A manual intervention was necessary from our side to ensure
+          the audience fully comprehended the process. It would be valuable to
+          condense the instructions to encourage more people to read it before
+          starting.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          Even though the stamps were tagged and organized, the audience was not
+          sufficiently incentivised to place the stamps back in their respective
+          slots. Perhaps, this could be made an explicit part of the process or
+          explore a different arrangement (such as hanging the stamps) which
+          would minimise the chaos.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          The stamps themselves are not sufficiently rugged to be reused in the
+          long run. We should explore better materials for the stamp or prepare
+          accordingly.
+        </p>
+      </section>
+    </main>
+
+    <footer
+      class="
+        mw-page
+        ml-auto
+        mr-auto
+        flex flex-column flex-row-l
+        items-center
+        justify-center justify-between-l
+        mt5
+      "
+    >
+      <small class="w-100 w-third-l tc tl-l pv3 f4 lh-copy"
+        >© Priti Pandurangan 2022</small
+      >
+      <div class="w4 pv3 flex items-center justify-between">
+        <a
+          class="link dim hover dim"
+          href="https://www.linkedin.com/in/priti-pandurangan/"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/linkedin.svg" />
+        </a>
+
+        <a
+          class="link dim hover"
+          href="https://www.instagram.com/priti.pg"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/instagram.svg" />
+        </a>
+
+        <a class="link dim hover" href="mailto:where@priti.is" target="_blank">
+          <img class="w-icon" src="/assets/email.svg" />
+        </a>
+      </div>
+      <div class="w-100 w-third-l tc tr-l pv3 f4 lh-copy">
+        <a href="/thankful" class="link hover dim black-70"> Colophon </a>
+      </div>
+    </footer>
+  </body>
+</html>

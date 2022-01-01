@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priti Pandurangan</title>
+    <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="/assets/script.js"></script>
+  </head>
+  <body
+    class="mw-page ml-auto mr-auto mb4 ph5-ns ph4 jost black-70 bg-chalkwhite"
+    x-data="app"
+    :class="{ 'overflow-hidden': menuIsOpen }"
+  >
+    <header class="full-bleed bb bw2 b--coralred">
+      <nav
+        class="
+          flex
+          items-center
+          justify-end justify-center-ns
+          mv3
+          mw8
+          ml-auto
+          mr-auto
+        "
+      >
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in leftNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              >
+              </a>
+            </li>
+          </template>
+        </ul>
+        <div class="w-10 w-20-l flex items-center justify-center mr-nav mr0-ns">
+          <a href="/" title="Home">
+            <img style="width: 60px" src="/assets/header.svg" />
+          </a>
+        </div>
+        <ul role="list" class="dn flex-ns w-40 items-center justify-around">
+          <template x-for="navItem in rightNavItems" :key="navItem.link">
+            <li>
+              <a
+                x-bind:href="navItem.link"
+                class="f5-l f6-m f7 fw3 ttu tracked link hover dim coralred"
+                x-text="navItem.title"
+              ></a>
+            </li>
+          </template>
+        </ul>
+      </nav>
+
+      <div class="dn-ns">
+        <input
+          type="checkbox"
+          id="openmenu"
+          class="hamburger-checkbox z-5"
+          x-model="menuIsOpen"
+        />
+        <div class="hamburger-icon z-5">
+          <label for="openmenu" id="hamburger-label">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        <div class="menu-pane absolute top-0 left-0 bg-white z-4">
+          <nav class="w-100 pv6 ph4">
+            <ul role="list">
+              <template
+                x-for="(navItem, index) in navItems"
+                :key="navItem.link"
+              >
+                <li>
+                  <a
+                    x-bind:href="navItem.link"
+                    class="dib f4 fw3 ttu tracked link hover dim coralred"
+                    x-bind:class="{ 'mt4': index !== 0 }"
+                    x-text="navItem.title"
+                  >
+                  </a>
+                </li>
+              </template>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="bg-coralred full-bleed ph4 ph5-l pt4 pb7 white">
+        <h1 class="butler f3 f2-l lh-title tc fw5 pt5 mb5 mv0-ns">
+          On Generative Art and Pen Plotters
+        </h1>
+      </section>
+
+      <section
+        class="
+          mw-blog
+          ml-auto
+          mr-auto
+          bg-white
+          br3-ns
+          pa4
+          pa5-m
+          pa6-l
+          full-bleed-s
+        "
+        style="margin-top: -14rem"
+      >
+        <p class="f5 f4-ns lh-copy black-50 drop-cap">
+          Artists have long worked on breaking down the creative process into a
+          series of parameters and steps that can be followed by a human being
+          or a machine. Instead of producing a single result, crafting the
+          parameters can generate an endless multitude of variations. Computers
+          add a layer of possibility with a precise language of control with
+          programming primitives like conditionals, repetition, and randomness.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          Art produced in this manner is often called Generative Art. In the
+          words of Sol LeWitt,
+          <em class="i">the idea becomes the machine that makes the art</em>.
+        </p>
+        <blockquote class="mt5 mb4">
+          <p class="butler f4 f3-ns lh-copy black-90 pull-quote">
+            When an artist uses a conceptual form of art, it means that all the
+            planning and decisions are made beforehand and the execution is a
+            perfunctory affair. The idea becomes the machine that makes the art.
+          </p>
+
+          <p class="butler f4 f3-ns lh-copy i black-90 fw3">
+            &mdash; Sol LeWitt, “Paragraphs on Conceptual Art,” 1967
+          </p>
+        </blockquote>
+
+        <div class="pv4">
+          <img class="w-100" src="/assets/writings/genart/01.jpg" />
+        </div>
+        <p class="f5 f4-ns lh-copy black-50">
+          My tryst with generative art draws inspiration from artists belonging
+          to various art and design movements. The artwork can be crafted with
+          carefully constructed geometric patterns. It can also be an array of
+          unimaginable variations achieved by incorporating a chance.
+          "Randomness", like Vera Molnar, puts it, "can replace intuition and
+          enrich the artistic sense"
+          <sup
+            ><a href="#footnote-1" class="coralred link dim hover">[1]</a></sup
+          >. I see algorithmic art as a beautiful blend of order and chaos.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          Take a designer who’s drawings resemble chicken scratch, add an
+          obsession for fancy pens & ink, a pen plotter is the final missing
+          link. Even just watching my plotter in action is mesmerizing. It could
+          easily compete with any oddly satisfying video on Twitter.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          The basic premise behind a plotter is fairly straightforward. The
+          artworks are defined as shapes and the plotter “draws” them on a
+          surface by moving a pen across. This not only reproduces the final
+          image but also reconstructs the order in which these lines and curves
+          are defined in the artwork.
+        </p>
+        <p class="f5 f4-ns lh-copy black-50">
+          Unlike humans, plotters are capable of drawing with extreme precision
+          and don’t get tired and sweaty with endless repetition.
+        </p>
+
+        <h3 class="f3 f2-ns lh-title fw5 mt4 mt5-ns mb0 black-80">
+          My Artworks
+        </h3>
+        <p class="f5 f4-ns lh-copy black-50">
+          Here’s a collection of plotted generative artworks that I made for an
+          ongoing <span class="i fw3">#100daysofCreativeCoding</span> series
+          organized around concepts like grids, repetition, perspectives,
+          dimensions, etc.
+        </p>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/genart/02.jpg" />
+        </div>
+        <p class="f5 f4-ns lh-copy black-50">
+          Mandalas are the best examples of the infinite variation and beauty
+          that can come out from playing with a few parameters. These are
+          similar to the concept of spirographs created by drawing circles
+          around a central point. Adding some trigonometry (high school
+          nightmares, anyone?) does wonder to the possibilities.
+        </p>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/genart/04.gif" />
+        </div>
+        <p class="f5 f4-ns lh-copy black-50">
+          The premise of the 100-day project is quite simple: pick one thing
+          that you are passionate about and repeat every day for 100 days. The
+          fun is not necessarily about gaping at the final piece — it’s about
+          enjoying and learning through the process. Groups of like-minded
+          people share their work on platforms like Instagram and the
+          accountability of doing something alongside other people on a public
+          platform can be quite empowering. The best trick to experience this is
+          to just subject yourself to it.
+        </p>
+        <div class="mv4">
+          <img class="w-100" src="/assets/writings/genart/03.jpg" />
+        </div>
+        <p class="f5 f4-ns lh-copy black-50">
+          For more works, check out
+          <a
+            href="https://www.instagram.com/priti.pg/"
+            class="link hover dim black-50 bb bw1 b--coralred"
+            target="_blank"
+            >my Instagram page</a
+          >.
+        </p>
+        <hr class="mt5" />
+        <p class="f5 f4-ns lh-copy black-50" id="footnote-1">
+          [1]
+          <a
+            href="https://muda.co/veramolnar"
+            class="link hover dim black-50 bb bw1 b--coralred"
+            target="_blank"
+            >Randomness Generator</a
+          >
+        </p>
+      </section>
+    </main>
+
+    <footer
+      class="
+        mw-page
+        ml-auto
+        mr-auto
+        flex flex-column flex-row-l
+        items-center
+        justify-center justify-between-l
+        mt5
+      "
+    >
+      <small class="w-100 w-third-l tc tl-l pv3 f4 lh-copy"
+        >© Priti Pandurangan 2022</small
+      >
+      <div class="w4 pv3 flex items-center justify-between">
+        <a
+          class="link dim hover dim"
+          href="https://www.linkedin.com/in/priti-pandurangan/"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/linkedin.svg" />
+        </a>
+
+        <a
+          class="link dim hover"
+          href="https://www.instagram.com/priti.pg"
+          target="_blank"
+        >
+          <img class="w-icon" src="/assets/instagram.svg" />
+        </a>
+
+        <a class="link dim hover" href="mailto:where@priti.is" target="_blank">
+          <img class="w-icon" src="/assets/email.svg" />
+        </a>
+      </div>
+      <div class="w-100 w-third-l tc tr-l pv3 f4 lh-copy">
+        <a href="/thankful" class="link hover dim black-70"> Colophon </a>
+      </div>
+    </footer>
+  </body>
+</html>

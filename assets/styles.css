@@ -1,0 +1,381 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@font-face {
+  font-family: "Butler";
+  src: url("/assets/fonts/Butler-UltraLight.woff2") format("woff2"),
+    url("/assets/fonts/Butler-UltraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Butler";
+  src: url("/assets/fonts/Butler-Medium.woff2") format("woff2"),
+    url("/assets/fonts/Butler-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Butler";
+  src: url("/assets/fonts/Butler-Light.woff2") format("woff2"),
+    url("/assets/fonts/Butler-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Butler";
+  src: url("/assets/fonts/Butler-Black.woff2") format("woff2"),
+    url("/assets/fonts/Butler-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Butler";
+  src: url("/assets/fonts/Butler-Bold.woff2") format("woff2"),
+    url("/assets/fonts/Butler-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Butler";
+  src: url("/assets/fonts/Butler-ExtraBold.woff2") format("woff2"),
+    url("/assets/fonts/Butler-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Butler";
+  src: url("/assets/fonts/Butler.woff2") format("woff2"),
+    url("/assets/fonts/Butler.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.jost {
+  font-family: "Jost", sans-serif;
+}
+
+.butler {
+  font-family: "Butler", serif;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+ul[role="list"],
+li[role="list"] {
+  padding: 0;
+  list-style: none;
+}
+
+.bg-coralred {
+  background: #ff4544;
+}
+
+.bg-chalkwhite {
+  background: #f5f5f5;
+}
+
+.bg-kittu-blue {
+  background: rgb(70, 52, 204);
+}
+
+.b--kittu-blue {
+  border-color: rgb(70, 52, 204);
+}
+
+.coralred {
+  color: #ff4544;
+}
+.b--coralred {
+  border-color: #ff4544;
+}
+.kittu-blue {
+  color: rgb(70, 52, 204);
+}
+
+.mw-page {
+  max-width: 80rem;
+}
+.mw-blog {
+  max-width: 60rem;
+}
+
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.fira-sans {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "avenir next",
+    avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial,
+    sans-serif;
+}
+
+.nunito {
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "avenir next",
+    avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial,
+    sans-serif;
+}
+
+.mukta {
+  font-family: "Mukta Malar", -apple-system, BlinkMacSystemFont, "avenir next",
+    avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial,
+    sans-serif;
+}
+
+.no-select {
+  user-select: none;
+}
+
+.showreel {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.showreel > * {
+  flex: none;
+}
+
+.w-showreel {
+  width: 25rem;
+}
+.h-showreel {
+  height: 25rem;
+}
+@media screen and (max-width: 60em) {
+  .h-showreel {
+    height: 20rem;
+  }
+}
+
+.w-showreel-s {
+  width: 20rem;
+}
+.h-showreel-s {
+  height: 15.625rem;
+}
+
+.w-showreel-strip {
+  width: 2.5rem;
+}
+.ml-showreel-strip {
+  margin-left: 2.5rem;
+}
+
+.rotate-y {
+  transform-origin: 0 0;
+  transform: rotate(270deg);
+}
+
+.profile-image {
+  width: 80%;
+}
+
+@media screen and (min-width: 60em) {
+  .profile-image {
+    width: 180px;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .w-45-l {
+    width: 45%;
+  }
+
+  .w-55-l {
+    width: 55%;
+  }
+}
+
+.grid-tinkerings {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1rem;
+}
+.grid-tinkerings-compact {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1rem;
+}
+.grid-projects {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media screen and (min-width: 60em) {
+  .pr-micro-l {
+    padding-right: 0.15rem;
+  }
+  .pl-micro-l {
+    padding-left: 0.15rem;
+  }
+}
+
+@media screen and (min-width: 30em) and (max-width: 60em) {
+  .grid-tinkerings {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-tinkerings-compact {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+  .grid-projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .grid-tinkerings {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-tinkerings-compact {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+  }
+  .grid-projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.-z-1 {
+  z-index: -1;
+}
+
+.no-select {
+  user-select: none;
+}
+
+.shadow-btn {
+  box-shadow: 0 0.375em 0 #ff4544;
+}
+
+.dot {
+  position: relative;
+}
+
+.dot:before {
+  display: block;
+  position: absolute;
+  content: " ";
+  top: -10px;
+  left: -18px;
+  background-image: url("/assets/dot.svg");
+  background-size: 48px 48px;
+  height: 48px;
+  width: 48px;
+  z-index: -1;
+}
+
+.b--coralred {
+  border-color: rgba(255, 68, 68);
+}
+.b--coralred-10 {
+  border-color: rgba(255, 68, 68, 0.1);
+}
+
+.drop-cap::first-letter {
+  font-family: "Butler", serif;
+  color: rgba(255, 68, 68);
+  float: left;
+  font-size: 4rem;
+  line-height: 0.8;
+  margin: 0.13em 0.1em 0 0;
+}
+
+.pull-quote {
+  position: relative;
+}
+
+.pull-quote::before {
+  content: "“";
+  position: absolute;
+  top: -9rem;
+  left: -4rem;
+  color: rgba(255, 68, 68);
+  font-size: 24rem;
+  font-family: "Butler", serif;
+  opacity: 0.1;
+}
+
+.hamburger-checkbox {
+  position: absolute;
+  top: 5vh;
+  left: 5vw;
+  width: 10vw;
+  opacity: 0;
+  height: 6vh;
+}
+
+.hamburger-icon {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+}
+
+.hamburger-icon span {
+  height: 2px;
+  width: 30px;
+  background-color: #ff4544;
+  display: block;
+  margin: 5px 0px 5px 0px;
+  transition: 0.7s ease-in-out;
+  transform: none;
+}
+
+#openmenu:checked ~ .hamburger-icon span:nth-of-type(1) {
+  transform-origin: center;
+  transform: translateY(6.5px) rotate(-45deg);
+  background-color: #ff4544;
+}
+
+#openmenu:checked ~ .hamburger-icon span:nth-of-type(2) {
+  opacity: 0;
+}
+
+#openmenu:checked ~ .hamburger-icon span:nth-of-type(3) {
+  transform-origin: center;
+  transform: translateY(-6.5px) rotate(45deg);
+  background-color: #ff4544;
+}
+
+.menu-pane {
+  width: 100vw;
+  height: 100vh;
+  transform: translateX(-100vw);
+  transition: 0.6s ease-in-out;
+}
+
+#openmenu:checked ~ .menu-pane {
+  left: 0;
+  transform: translateX(0);
+}
+
+@media screen and (max-width: 30em) {
+  .mr-nav {
+    margin-right: 2.5rem;
+  }
+}
+
+.w-icon {
+  width: 1.5rem;
+}
+
+.w-max-80 {
+  max-width: 80%;
+}
+
+@media screen and (max-width: 30em) {
+  .full-bleed-s {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+  }
+}
