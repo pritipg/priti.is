@@ -597,9 +597,9 @@
                               class="lh-copy"
                               x-text="appearance.event"
                             ></span>
-                            <span class="dib ph2">
-                              <img class="w1" src="/assets/link-arrow.svg" />
-                            </span>
+                            <template x-if="appearance.link">
+                              &nbsp;<span class="coralred f6 mh1">↗</span>
+                            </template>
                           </a>
                         </div>
                       </template>

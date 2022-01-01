@@ -134,15 +134,6 @@ li[role="list"] {
   user-select: none;
 }
 
-.showreel {
-  display: flex;
-  overflow-x: scroll;
-}
-
-.showreel > * {
-  flex: none;
-}
-
 .w-showreel {
   width: 25rem;
 }
