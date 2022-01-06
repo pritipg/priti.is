@@ -167,7 +167,7 @@ document.addEventListener("alpine:init", () => {
       },
       {
         title: "Second Place · My Name is Akbar Khan",
-        subtitle: "In collaboration with Gramenar Storylabs",
+        subtitle: "In collaboration with Gramener Storylabs",
         appearances: [
           {
             event: "Center for Global Data Visualisation · Hackathon",
