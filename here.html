@@ -22,15 +22,7 @@
   >
     <header class="full-bleed bb bw2 b--coralred">
       <nav
-        class="
-          flex
-          items-center
-          justify-end justify-center-ns
-          mv3
-          mw8
-          ml-auto
-          mr-auto
-        "
+        class="flex items-center justify-end justify-center-ns mv3 mw8 ml-auto mr-auto"
       >
         <ul role="list" class="dn flex-ns w-40 items-center justify-around">
           <template x-for="navItem in leftNavItems" :key="navItem.link">
@@ -113,23 +105,19 @@
             <h1 class="butler f3 f2-ns fw6 lh-solid mv0">
               Priti Pandurangan <span class="i fw2 black-70">is</span>
             </h1>
-            <h2
-              class="
-                f6
-                f4-ns
-                fw3
-                lh-copy
-                mt1
-                mb3
-                i
-                no-select
-                pointer
-                white-70-ns white-90
-              "
-              style="letter-spacing: 0.05em"
-              x-text="bylines[currentBylineIndex]"
-              x-on:click="cycle"
-            ></h2>
+            <div
+              class="flex items-center align-center mt1 mb3 rotate-container"
+            >
+              <h2
+                class="f6 f4-ns fw3 lh-copy mv0 i no-select pointer white-70-ns white-90"
+                style="letter-spacing: 0.05em"
+                x-text="bylines[currentBylineIndex]"
+                x-on:click="cycle"
+              ></h2>
+              <span class="db f4 white-70-ns white-90 ml1 rotate-target"
+                >↺</span
+              >
+            </div>
             <p class="f5 f4-ns fw3 lh-copy measure mb4 white-90">
               I'm an Information Designer based in Bengaluru, India. I create
               data stories and work with the Storylabs team at Gramener.
@@ -180,35 +168,10 @@
                     src="/assets/homepage/showcase/coral-reefs.jpg"
                   />
                   <div
-                    class="
-                      absolute
-                      top-0
-                      left-0
-                      w-100
-                      h-100
-                      flex
-                      items-center
-                      justify-center
-                      o-0
-                      glow
-                      bg-white-60
-                    "
+                    class="absolute top-0 left-0 w-100 h-100 flex items-center justify-center o-0 glow bg-white-60"
                   >
                     <div
-                      class="
-                        butler
-                        f3
-                        f2-l
-                        bt
-                        bb
-                        b--black-90
-                        bw1
-                        ph2
-                        pv1
-                        black-90
-                        w-max-80
-                        tc
-                      "
+                      class="butler f3 f2-l bt bb b--black-90 bw1 ph2 pv1 black-90 w-max-80 tc"
                     >
                       Coral Bleaching
                     </div>
@@ -223,35 +186,10 @@
                     src="/assets/homepage/showcase/meghadutam.gif"
                   />
                   <div
-                    class="
-                      absolute
-                      top-0
-                      left-0
-                      w-100
-                      h-100
-                      flex
-                      items-center
-                      justify-center
-                      o-0
-                      glow
-                      bg-white-60
-                    "
+                    class="absolute top-0 left-0 w-100 h-100 flex items-center justify-center o-0 glow bg-white-60"
                   >
                     <div
-                      class="
-                        butler
-                        f3
-                        f2-l
-                        bt
-                        bb
-                        b--black-90
-                        bw1
-                        ph2
-                        pv1
-                        black-90
-                        w-max-80
-                        tc
-                      "
+                      class="butler f3 f2-l bt bb b--black-90 bw1 ph2 pv1 black-90 w-max-80 tc"
                     >
                       Asking a Shadow to Dance
                     </div>
@@ -266,35 +204,10 @@
                     src="/assets/homepage/showcase/obesity.png"
                   />
                   <div
-                    class="
-                      absolute
-                      top-0
-                      left-0
-                      w-100
-                      h-100
-                      flex
-                      items-center
-                      justify-center
-                      o-0
-                      glow
-                      bg-white-60
-                    "
+                    class="absolute top-0 left-0 w-100 h-100 flex items-center justify-center o-0 glow bg-white-60"
                   >
                     <div
-                      class="
-                        butler
-                        f3
-                        f2-l
-                        bt
-                        bb
-                        b--black-90
-                        bw1
-                        ph2
-                        pv1
-                        black-90
-                        w-max-80
-                        tc
-                      "
+                      class="butler f3 f2-l bt bb b--black-90 bw1 ph2 pv1 black-90 w-max-80 tc"
                     >
                       Our Fattening World
                     </div>
@@ -309,35 +222,10 @@
                     src="/assets/homepage/showcase/transmedia-type.jpg"
                   />
                   <div
-                    class="
-                      absolute
-                      top-0
-                      left-0
-                      w-100
-                      h-100
-                      flex
-                      items-center
-                      justify-center
-                      o-0
-                      glow
-                      bg-white-60
-                    "
+                    class="absolute top-0 left-0 w-100 h-100 flex items-center justify-center o-0 glow bg-white-60"
                   >
                     <div
-                      class="
-                        butler
-                        f3
-                        f2-l
-                        bt
-                        bb
-                        b--black-90
-                        bw1
-                        ph2
-                        pv1
-                        black-90
-                        w-max-80
-                        tc
-                      "
+                      class="butler f3 f2-l bt bb b--black-90 bw1 ph2 pv1 black-90 w-max-80 tc"
                     >
                       Transmedia Typography
                     </div>
@@ -352,35 +240,10 @@
                     src="/assets/homepage/showcase/joyful-data.jpg"
                   />
                   <div
-                    class="
-                      absolute
-                      top-0
-                      left-0
-                      w-100
-                      h-100
-                      flex
-                      items-center
-                      justify-center
-                      o-0
-                      glow
-                      bg-white-60
-                    "
+                    class="absolute top-0 left-0 w-100 h-100 flex items-center justify-center o-0 glow bg-white-60"
                   >
                     <div
-                      class="
-                        butler
-                        f3
-                        f2-l
-                        bt
-                        bb
-                        b--black-90
-                        bw1
-                        ph2
-                        pv1
-                        black-90
-                        w-max-s80
-                        tc
-                      "
+                      class="butler f3 f2-l bt bb b--black-90 bw1 ph2 pv1 black-90 w-max-s80 tc"
                     >
                       Joyful Data
                     </div>
@@ -395,35 +258,10 @@
                     src="/assets/homepage/showcase/agami.jpg"
                   />
                   <div
-                    class="
-                      absolute
-                      top-0
-                      left-0
-                      w-100
-                      h-100
-                      flex
-                      items-center
-                      justify-center
-                      o-0
-                      glow
-                      bg-white-60
-                    "
+                    class="absolute top-0 left-0 w-100 h-100 flex items-center justify-center o-0 glow bg-white-60"
                   >
                     <div
-                      class="
-                        butler
-                        f3
-                        f2-l
-                        bt
-                        bb
-                        b--black-90
-                        bw1
-                        ph2
-                        pv1
-                        black-90
-                        w-max-s80
-                        tc
-                      "
+                      class="butler f3 f2-l bt bb b--black-90 bw1 ph2 pv1 black-90 w-max-s80 tc"
                     >
                       Let's Put a Pin On It
                     </div>
@@ -454,27 +292,11 @@
                 class="link dark-gray"
               >
                 <div
-                  class="
-                    flex flex-column flex-row-m flex-row-l
-                    items-center items-start-m
-                    cursor
-                    hover
-                    dim
-                    bb
-                    b--black-10
-                    pv3
-                  "
+                  class="flex flex-column flex-row-m flex-row-l items-center items-start-m cursor hover dim bb b--black-10 pv3"
                   x-bind:class="index === 0 ? 'bt' : ''"
                 >
                   <div
-                    class="
-                      flex flex-column flex-row-l
-                      items-center items-start-m
-                      pr0
-                      pr3-m
-                      pr0-l
-                      w-100 w-80-m w-90-l
-                    "
+                    class="flex flex-column flex-row-l items-center items-start-m pr0 pr3-m pr0-l w-100 w-80-m w-90-l"
                   >
                     <div class="w-100 w-50-l">
                       <span
@@ -487,16 +309,7 @@
                     </div>
                     <div
                       x-if="writing.publisher"
-                      class="
-                        w-100 w-40-l
-                        f5
-                        fw4
-                        lh-title
-                        measure
-                        mt1
-                        mt0-l
-                        black-60
-                      "
+                      class="w-100 w-40-l f5 fw4 lh-title measure mt1 mt0-l black-60"
                       x-text="writing.publisher"
                     ></div>
                   </div>
@@ -611,16 +424,7 @@
                       </template>
 
                       <div
-                        class="
-                          w-100 w-20-ns
-                          f5
-                          fw4
-                          lh-copy
-                          mt0
-                          mt2-ns
-                          tr-ns
-                          black-40
-                        "
+                        class="w-100 w-20-ns f5 fw4 lh-copy mt0 mt2-ns tr-ns black-40"
                         x-text="appearance.date"
                       ></div>
                     </div>
@@ -681,16 +485,7 @@
                           </a>
 
                           <div
-                            class="
-                              w-100 w-20-m
-                              f5
-                              fw4
-                              lh-copy
-                              mt0
-                              mt2-ns
-                              tr-ns
-                              black-40
-                            "
+                            class="w-100 w-20-m f5 fw4 lh-copy mt0 mt2-ns tr-ns black-40"
                             x-text="appearance.date"
                           ></div>
                         </div>
@@ -744,16 +539,7 @@
                           </a>
 
                           <div
-                            class="
-                              w-100 w-20-ns
-                              f5
-                              fw4
-                              lh-copy
-                              mt0
-                              mt2-ns
-                              tr-ns
-                              black-40
-                            "
+                            class="w-100 w-20-ns f5 fw4 lh-copy mt0 mt2-ns tr-ns black-40"
                             x-text="appearance.date"
                           ></div>
                         </div>
@@ -776,15 +562,7 @@
     </main>
 
     <footer
-      class="
-        mw-page
-        ml-auto
-        mr-auto
-        flex flex-column flex-row-l
-        items-center
-        justify-center justify-between-l
-        mt5
-      "
+      class="mw-page ml-auto mr-auto flex flex-column flex-row-l items-center justify-center justify-between-l mt5"
     >
       <small class="w-100 w-third-l tc tl-l pv3 f4 lh-copy"
         >© Priti Pandurangan 2022</small

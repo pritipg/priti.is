@@ -370,3 +370,13 @@ li[role="list"] {
     margin-left: calc(50% - 50vw);
   }
 }
+
+.rotate-container .rotate-target {
+  transition: none;
+  transform: rotate(0deg);
+}
+
+.rotate-container:hover .rotate-target {
+  transition: transform 0.7s ease-in-out;
+  transform: rotate(-360deg);
+}
