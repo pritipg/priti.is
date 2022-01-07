@@ -380,3 +380,7 @@ li[role="list"] {
   transition: transform 0.7s ease-in-out;
   transform: rotate(-360deg);
 }
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
